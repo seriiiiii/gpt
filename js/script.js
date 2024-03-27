@@ -33,18 +33,18 @@ $(document).ready(function() {
     $(".container").toggleClass("sub-menu-open");
     
     if ($(".hide_menu").css("display") === "none") {
-      $(".container").css("margin-left", "45px");
+      $(".container").css("margin-left", "70px");
     } else {
-      $(".container").css("margin-left", "295px");
+      $(".container").css("margin-left", "320px");
     }
   });
 
-  $(".left.side-menu .fa-hashtag").click(function() {
+  $(".left.side-menu .hashtag").click(function() {
     $(".left_sub_menu").show();
     $(".left_sub_menu_2").hide();
   });
 
-  $(".left.side-menu .fa-comment").click(function() {
+  $(".left.side-menu .comment").click(function() {
     $(".left_sub_menu_2").show();
     $(".left_sub_menu").hide();
   });
