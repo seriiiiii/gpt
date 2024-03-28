@@ -68,17 +68,26 @@
           </div>
       </div>
       <div class="left_sub_menu_2">
-          <div class="sub_menu">
-            <h1>DX-BOT</h1>
-              <input type="search" name="SEARCH" placeholder="search">
-              <h2>대화 목록</h2>
-              <ul class="main_title">
-                  <li><a href="#chatbot-balloon">ㆍ 위치이동.</a></li>
-                  <li>ㆍ 유저 입니다.</li>
-                  <li>ㆍ 유저 입니다.</li>
-                  <li>ㆍ 유저 입니다.</li>
-              </ul>
+        <div class="sub_menu">
+          <h1>DX-BOT</h1>
+          <input type="search" name="SEARCH" placeholder="search">
+          <div class="editable-heading">
+              <input type="text" value="Hi" readonly style="display: none;">
+              <span class="edit-title">Hi</span>
+              <button class="edit-button" onclick="enableEdit()">Edit</button>
+              <button class="save-button" style="display: none;" onclick="saveEdit()">Save</button>
           </div>
+          <form class="hash-tag-form">
+            <input type="text" placeholder="Write hashtags here..." onkeypress="handleKeyPress(event)">
+        </form>
+          <ul class="main_title">
+              <li><a href="#chatbot-balloon">ㆍ 위치이동.</a></li>
+              <li>ㆍ 유저 입니다.</li>
+              <li>ㆍ 유저 입니다.</li>
+              <li>ㆍ 유저 입니다.</li>
+          </ul>
+      </div>
+      
       </div>
       </div>
       </div>

@@ -83,3 +83,79 @@ $(document).ready(function() {
     $(this).find('.arrow').toggleClass('rotate');
   });
 });
+
+function enableEdit() {
+  var editableHeading = document.querySelector('.editable-heading');
+  var editButton = editableHeading.querySelector('.edit-button');
+  var saveButton = editableHeading.querySelector('.save-button');
+  var headingText = editableHeading.querySelector('span');
+  var headingInput = editableHeading.querySelector('input[type="text"]');
+  var hashTagForm = document.querySelector('.hash-tag-form');
+
+  editButton.style.display = 'none';
+  saveButton.style.display = 'inline-block';
+  headingText.style.display = 'none';
+  headingInput.style.display = 'inline-block';
+  hashTagForm.style.display = 'block';
+  headingInput.readOnly = false;
+  headingInput.focus(); 
+  hashTagForm.style.display = 'block';
+}
+
+function saveEdit() {
+  var editableHeading = document.querySelector('.editable-heading');
+  var editButton = editableHeading.querySelector('.edit-button');
+  var saveButton = editableHeading.querySelector('.save-button');
+  var headingText = editableHeading.querySelector('span');
+  var headingInput = editableHeading.querySelector('input[type="text"]');
+  var hashTagForm = document.querySelector('.hash-tag-form');
+
+  editButton.style.display = 'inline-block';
+  saveButton.style.display = 'none';
+  headingText.style.display = 'inline-block';
+  headingInput.style.display = 'none';
+  hashTagForm.style.display = 'none'; 
+}
+
+function handleKeyPress(event) {
+  const keyCode = event.keyCode || event.which;
+  if (keyCode === 13) {
+      event.preventDefault();
+      createHashTagButton(event.target.value);
+      event.target.value = ''; 
+  }
+}
+
+function createHashTagButton(text) {
+  const hashTagForm = document.querySelector('.hash-tag-form');
+  const hashTagList = document.createElement('div');
+  hashTagList.className = 'hash-tag-list';
+
+  const hashTagButton = document.createElement('button');
+  hashTagButton.innerText = '#' + text;
+
+  const deleteButton = document.createElement('span');
+  deleteButton.innerText = 'x';
+  deleteButton.className = 'delete-tag';
+  deleteButton.addEventListener('click', function() {
+      hashTagList.removeChild(hashTagButton);
+      hashTagList.removeChild(deleteButton);
+      repositionButtons(hashTagList);
+  });
+
+  hashTagButton.appendChild(deleteButton);
+  hashTagList.appendChild(hashTagButton);
+  hashTagForm.insertAdjacentElement('beforebegin', hashTagList);
+  repositionButtons(hashTagList);
+}
+
+function repositionButtons(hashTagList) {
+  const buttons = hashTagList.querySelectorAll('button');
+  const deleteButtons = hashTagList.querySelectorAll('.delete-tag');
+
+  for (let i = 0; i < buttons.length; i++) {
+      buttons[i].style.order = i;
+      deleteButtons[i].style.order = i;
+  }
+}
+
