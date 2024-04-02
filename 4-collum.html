@@ -14,85 +14,201 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
-    <div id="Modal" class="modal">
+    <!-- <div id="past-chat_Modal" class="past-chat_modal">
         <div class="modal-content">
           <span class="close">&times;</span>
           <p>모달 내용을 입력하세요.</p>
         </div>
-      </div>
+      </div> -->
     <div id="wrapper">
-      <div class="topbar" style="position: absolute; top:0;">
-        <!-- 왼쪽 메뉴 -->
-        <div class="left side-menu">
-          <div class="sidebar-inner">
-            <div id="sidebar-menu">
-            
-              <ul>
-                <li class="has_sub"><a href="javascript:void(0);" class="waves-effect">
-                  <!-- <button id="toggleSubMenu" class="hamburger-menu">Toggle Sub Menu</button> -->
-                  <svg  id="toggleSubMenu" class="hamburger-bar" xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
-                  <svg class="hashtag" xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-hash"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg>
-                  <svg class="comment" xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-message-2-code"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9h8" /><path d="M8 13h6" /><path d="M12 21l-1 -1l-2 -2h-3a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v6" /><path d="M20 21l2 -2l-2 -2" /><path d="M17 17l-2 2l2 2" /></svg>
-                </a></li>
-              </ul>
+      <nav>
+        <div class="nav_container">
+            <!-- <div class="logo_area">
+                <a class="logo_link" href="">
+                    <img src="../img/logo.svg" alt="">
+                </a>
+            </div> -->
+            <div class="nav_title_area head-font">
+                <div class="nav_title">
+                  <?xml version="1.0" encoding="UTF-8"?>
+                  <svg id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137.57 173.87" style="width:20px;">
+                    <defs>
+                      <style>
+                        .cls-1 {
+                          fill: #fff;
+                        }
+                  
+                        .cls-1, .cls-2 {
+                          stroke-width: 0px;
+                        }
+                  
+                        .cls-2 {
+                          fill: #fff;
+                        }
+                      </style>
+                    </defs>
+                    <g id="Layer_2" data-name="Layer 2">
+                      <polygon class="cls-2" points="57.88 139.94 44.09 137.08 42 118.2 39.91 137.08 26.11 139.94 39.91 142.82 42 161.69 44.09 142.82 57.88 139.94"/>
+                      <polygon class="cls-2" points="21.39 159.23 12.1 157.3 10.69 144.59 9.28 157.3 0 159.23 9.28 161.16 10.69 173.87 12.1 161.16 21.39 159.23"/>
+                      <path class="cls-1" d="M136.68,85.82l-54.8-11.39c-.47-.1-.83-.49-.88-.97L72.96.99c-.15-1.32-2.07-1.32-2.22,0l-8.04,72.47c-.05.48-.41.87-.88.97l-54.8,11.39c-1.19.25-1.19,1.94,0,2.19l54.8,11.43c.47.1.83.49.88.97l8.04,72.47c.15,1.32,2.07,1.32,2.22,0l8.04-72.47c.05-.48.41-.87.88-.97l54.8-11.43c1.18-.25,1.18-1.94,0-2.19Z"/>
+                    </g>
+                  </svg> 
+                    Magic Chat
+                </div>
             </div>
-          </div>
-        </div>
-        <!-- 왼쪽 서브 메뉴 -->
-        <div class="hide_menu">
-        <div class="left_sub_menu">
-          <div class="sub_menu">
-            <h1>DX-BOT</h1>
-              <button class="new-chat-button">+ New Chat</button> 
-              <!-- 새폴더 버튼 -->
-              <!-- <button class="new-folder-button">
-                  <i class="fas fa-folder"></i>
+            <div class="nav_fold_title_area head-font">
+                <div class="nav_title">
+                    <p><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="#fff"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-message-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9h8" /><path d="M8 13h6" /><path d="M12.01 18.594l-4.01 2.406v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v5.5" /><path d="M16 19h6" /><path d="M19 16v6" /></svg></p>
+                </div>
+            </div>
+            <div class="nav_wrap">
+              <div class="hide_menu">
+                <div class="left_sub_menu">
+                  <div class="sub_menu">
+                    <button class="new-chat-button">+ 새로운 채팅</button>
+                    <input type="search" name="SEARCH" placeholder="채팅 검색...">
+                    <!-- 탭 버튼 추가 -->
+                    <div class="tab">
+                      <button class="tablinks active" onclick="openTab(event, 'chat')">채팅방</button>
+                      <button class="tablinks" onclick="openTab(event, 'conversation')">대화</button>
+                    </div>
+                    <div id="chat" class="tabcontent">
+                      <h2>채팅방 목록</h2>
+                      
+                      <div class="chat-list">
+                      <ul>
+                        <li><span>
+                          <svg style="width:20px; fill:#fff;" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2"><path d="M474.123 209.81c11.525-34.577 7.569-72.423-10.838-103.904-27.696-48.168-83.433-72.94-137.794-61.414a127.14 127.14 0 00-95.475-42.49c-55.564 0-104.936 35.781-122.139 88.593-35.781 7.397-66.574 29.76-84.637 61.414-27.868 48.167-21.503 108.72 15.826 150.007-11.525 34.578-7.569 72.424 10.838 103.733 27.696 48.34 83.433 73.111 137.966 61.585 24.084 27.18 58.833 42.835 95.303 42.663 55.564 0 104.936-35.782 122.139-88.594 35.782-7.397 66.574-29.76 84.465-61.413 28.04-48.168 21.676-108.722-15.654-150.008v-.172zm-39.567-87.218c11.01 19.267 15.139 41.803 11.354 63.65-.688-.516-2.064-1.204-2.924-1.72l-101.152-58.49a16.965 16.965 0 00-16.687 0L206.621 194.5v-50.232l97.883-56.597c45.587-26.32 103.732-10.666 130.052 34.921zm-227.935 104.42l49.888-28.9 49.887 28.9v57.63l-49.887 28.9-49.888-28.9v-57.63zm23.223-191.81c22.364 0 43.867 7.742 61.07 22.02-.688.344-2.064 1.204-3.097 1.72L186.666 117.26c-5.161 2.925-8.258 8.43-8.258 14.45v136.934l-43.523-25.116V130.333c0-52.64 42.491-95.13 95.131-95.302l-.172.172zM52.14 168.697c11.182-19.268 28.557-34.062 49.544-41.803V247.14c0 6.02 3.097 11.354 8.258 14.45l118.354 68.295-43.695 25.288-97.711-56.425c-45.415-26.32-61.07-84.465-34.75-130.052zm26.665 220.71c-11.182-19.095-15.139-41.802-11.354-63.65.688.516 2.064 1.204 2.924 1.72l101.152 58.49a16.965 16.965 0 0016.687 0l118.354-68.467v50.232l-97.883 56.425c-45.587 26.148-103.732 10.665-130.052-34.75h.172zm204.54 87.39c-22.192 0-43.867-7.741-60.898-22.02a62.439 62.439 0 003.097-1.72l101.152-58.317c5.16-2.924 8.429-8.43 8.257-14.45V243.527l43.523 25.116v113.022c0 52.64-42.663 95.303-95.131 95.303v-.172zM461.22 343.303c-11.182 19.267-28.729 34.061-49.544 41.63V264.687c0-6.021-3.097-11.526-8.257-14.45L284.893 181.77l43.523-25.116 97.883 56.424c45.587 26.32 61.07 84.466 34.75 130.053l.172.172z" fill-rule="nonzero"/></svg>
+                        </span> GPT 3.5 Claud Gemini<p>5분전</p></li>
+                        <li>살수대첩 발생 연도
+                          <p class="setting">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-dots-vertical"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg>
+                        </p>
+                        <div class="tooltip">
+                          <div class="tooltip-item">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-pencil-minus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" /><path d="M13.5 6.5l4 4" /><path d="M16 19h6" /></svg> 이름/태그 수정
+                          </div>
+                          <div class="tooltip-item delete">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-trash"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7l16 0" /><path d="M10 11l0 6" /><path d="M14 11l0 6" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg> 삭제
+                          </div>
+                        </div>   
+                    </li>
+                        <li>#역사 #공부</li>
 
-              </button> -->
-              <input type="search" name="SEARCH" placeholder="Search chats...">
-              <h2>HashTag</h2>
-              <ul class="main_title">
-                  <!-- <li># 파이썬 <i class="arrow fas fa-angle-right"></i></li> -->
-                  <li># 파이썬 <i class="arrow"></i></li>
-                  <ul class="sub-title">
-                      <li><a href="#">#<span>파이썬</span> 어쩌구저쩌구</a></li>
-                      <li><a href="#">#<span>파이썬</span> 어쩌구저쩌구</a></li>
-                      <li><a href="#">#<span>파이썬</span> 어쩌구저쩌구</a></li>
-                      <li><a href="#">#<span>파이썬</span> 어쩌구저쩌구</a></li>
-                  </ul>
-              </ul>
-              <ul class="main_title">
-                  <li># 리액트 <i class="arrow"></i></li>
-                  <ul class="sub-title">
-                    <li><a href="#">#<span>리액트</span> 어쩌구저쩌구</a></li>
-                    <li><a href="#">#<span>리액트</span> 어쩌구저쩌구</a></li>
-                  </ul>
-              </ul>
-          </div>
-      </div>
-      <div class="left_sub_menu_2">
-          <div class="sub_menu">
-            <h1>DX-BOT</h1>
-              <input type="search" name="SEARCH" placeholder="search">
-              <h2>대화 목록</h2>
-              <ul class="main_title">
-                  <li><a href="#chatbot-balloon">ㆍ 위치이동.</a></li>
-                  <li>ㆍ 유저 입니다.</li>
-                  <li>ㆍ 유저 입니다.</li>
-                  <li>ㆍ 유저 입니다.</li>
-              </ul>
-          </div>
-      </div>
-      </div>
-      </div>
+                      </ul>
+                      </div>
+                      <div class="chat-list">
+                        <ul>
+                          <li><span>
+                            <svg style="width:20px;" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 512"><rect fill="#CC9B7A" width="512" height="512" rx="104.187" ry="105.042"/><path fill="#1F1F1E" fill-rule="nonzero" d="M318.663 149.787h-43.368l78.952 212.423 43.368.004-78.952-212.427zm-125.326 0l-78.952 212.427h44.255l15.932-44.608 82.846-.004 16.107 44.612h44.255l-79.126-212.427h-45.317zm-4.251 128.341l26.91-74.701 27.083 74.701h-53.993z"/></svg>
+                          </span> Claude
+                          <p>24/03/26
+                          </p></li>
+                          <li>부산 여행 추천지
+
+                            <p class="setting">
+                              <svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-dots-vertical"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg>
+                          </p>
+                          <div class="tooltip">
+                            <div class="tooltip-item">
+                              <svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-pencil-minus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" /><path d="M13.5 6.5l4 4" /><path d="M16 19h6" /></svg> 이름/태그 수정
+                            </div>
+                            <div class="tooltip-item delete">
+                              <svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-trash"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7l16 0" /><path d="M10 11l0 6" /><path d="M14 11l0 6" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg> 삭제
+                            </div>
+                          </div>
+                        </li>
+                          <li>#여행 #부산</li>
+  
+                        </ul>
+                        </div>
+                        <div class="chat-list">
+                          <ul>
+                            <li><span>
+                              <svg width="20" height="20" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 28C14 26.0633 13.6267 24.2433 12.88 22.54C12.1567 20.8367 11.165 19.355 9.905 18.095C8.645 16.835 7.16333 15.8433 5.46 15.12C3.75667 14.3733 1.93667 14 0 14C1.93667 14 3.75667 13.6383 5.46 12.915C7.16333 12.1683 8.645 11.165 9.905 9.905C11.165 8.645 12.1567 7.16333 12.88 5.46C13.6267 3.75667 14 1.93667 14 0C14 1.93667 14.3617 3.75667 15.085 5.46C15.8317 7.16333 16.835 8.645 18.095 9.905C19.355 11.165 20.8367 12.1683 22.54 12.915C24.2433 13.6383 26.0633 14 28 14C26.0633 14 24.2433 14.3733 22.54 15.12C20.8367 15.8433 19.355 16.835 18.095 18.095C16.835 19.355 15.8317 20.8367 15.085 22.54C14.3617 24.2433 14 26.0633 14 28Z" fill="url(#paint0_radial_16771_53212)"/>
+                                <defs>
+                                <radialGradient id="paint0_radial_16771_53212" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(2.77876 11.3795) rotate(18.6832) scale(29.8025 238.737)">
+                                <stop offset="0.0671246" stop-color="#9168C0"/>
+                                <stop offset="0.342551" stop-color="#5684D1"/>
+                                <stop offset="0.672076" stop-color="#1BA1E3"/>
+                                </radialGradient>
+                                </defs>
+                                </svg>
+                                
+                            </span> GPT 3.5 Gemini
+                            <p>24/03/13
+                            </p></li>
+                            <li>파이썬 코딩
+                              <p class="setting">
+                                <svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-dots-vertical"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg>
+                            </p>
+                            <div class="tooltip">
+                              <div class="tooltip-item">
+                                <svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-pencil-minus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" /><path d="M13.5 6.5l4 4" /><path d="M16 19h6" /></svg> 이름/태그 수정
+                              </div>
+                              <div class="tooltip-item delete">
+                                <svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-trash"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7l16 0" /><path d="M10 11l0 6" /><path d="M14 11l0 6" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg> 삭제
+                              </div>
+                            </div>
+                          </li>
+                            <li>#공부</li>
+    
+                          </ul>
+                          </div>
+                    </div>
+                    
+                    <div id="conversation" class="tabcontent">
+                      <h2>대화 목록</h2>
+                      <div class="chat-list">
+                        <ul>
+                          <li><span>
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brightness"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 3l0 18" /><path d="M12 9l4.65 -4.65" /><path d="M12 14.3l7.37 -7.37" /><path d="M12 19.6l8.85 -8.85" /></svg>
+                          </span> GPT 3.5 Claud Gemini<p>5분전</p></li>
+                          <li>살수대첩 발생 연도
+                            </li>
+                        </ul>
+                        <ul>
+                          <li><span>
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brightness"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 3l0 18" /><path d="M12 9l4.65 -4.65" /><path d="M12 14.3l7.37 -7.37" /><path d="M12 19.6l8.85 -8.85" /></svg>
+                          </span> GPT 3.5 Claud Gemini<p>5분전</p></li>
+                          <li>살수대첩 발생 연도</li>
+                        </ul>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="nav_profile_area">
+                <div class="profile_img_wrap">
+                    <span>U</span>
+                </div>
+                <div class="profile_info_wrap">
+                    <div class="profile_name">
+                       profile
+                    </div>
+                    <div class="profile_team">
+//
+                    </div>
+                </div>
+    
+            </div>
+    
+            <button id=" toggleSubMenu" class="nav_fold_btn">
+              <svg class="hamburger-bar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
+            </button>
+        </div>
+    </nav>
         <div class="container">
          
-          <header>
+          <!-- <header>
             <h1>Hi</h1>
             <div class="settings-icon">
               <svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-adjustments-horizontal"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M4 6l8 0" /><path d="M16 6l4 0" /><path d="M8 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M4 12l2 0" /><path d="M10 12l10 0" /><path d="M17 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M4 18l11 0" /><path d="M19 18l1 0" /></svg>
             </div>
-          </header>
+          </header> -->
           <div class="main">
             <div class="chat-container">
                 <!-- Bot Messages -->
@@ -101,8 +217,8 @@
                     <div class="message-content">
                         <div class="message-header">
                         <select>
-                            <option value="option1">ChatGPT</option>
-                            <option value="option2">Clause 3</option>
+                            <option value="option1">ChatGPT 3.5</option>
+                            <option value="option2">Claude 3</option>
                             <option value="option3">Bling Copilot</option>
                           </select>
                         
@@ -111,24 +227,27 @@
                             <input type="checkbox" class="switch-toggle">
     <span class="switch-label"></span>
                           </label>
-                        
-                          <!-- 복사 아이콘 -->
-                          <div class="copy-icon">
-                            <i class="fas fa-copy"></i>
-                          </div>
+
                           </div>
                           <div class="message-text">
                             <div class="user" onmouseover="showIcons(this)" onmouseout="hideIcons(this)">
                               <div class="profile-container">
-                                user
+                                <img src="images/profile.jpg" alt="chat Profile" class="profile-image">
+                                <span>User</span>
                               </div>
+                              <div class="user-text">
                               유저 입니다.
+                              </div>
                             </div>
+                            
                             <div class="chatbot" onmouseover="showIcons(this)" onmouseout="hideIcons(this)">
                               <div class="profile-container">
-                                <img src="images/profile.jpg" alt="chat Profile" class="profile-image">
+                                <img src="images/gpt.svg" alt="chat Profile" class="profile-image">
+                                <span>Chat</span>
                               </div>
+                              <div class="chat-text">
                               챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇
+                              </div>
                               <div class="icon-container">
                                   <span class="copy-icon-left"><svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></span>
                                   <span class="save-icon-left"><svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-download"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M12 17v-6" /><path d="M9.5 14.5l2.5 2.5l2.5 -2.5" /></svg></span>
@@ -138,145 +257,182 @@
                     </div>
                 </div>
                 <div class="message bot-message">
-                    <div class="message-content">
-                        <div class="message-header">
-                        <select>
-                            <option value="option1">ChatGPT</option>
-                            <option value="option2">Clause 3</option>
-                            <option value="option3">Bling Copilot</option>
-                          </select>
-                        
-                          <!-- On/Off Button -->
-                          <label class="switch">
-                            <input type="checkbox" class="switch-toggle">
+                  <div class="message-content">
+                      <div class="message-header">
+                      <select>
+                          <option value="option1">ChatGPT 4.0</option>
+                          <option value="option1">ChatGPT 3.5</option>
+                          <option value="option2">Clause 3</option>
+                          <option value="option3">Bling Copilot</option>
+                        </select>
+                      
+                        <!-- On/Off Button -->
+                        <label class="switch">
+                          <input type="checkbox" class="switch-toggle">
     <span class="switch-label"></span>
-                          </label>
-                        
-                          <!-- 복사 아이콘 -->
-                          <div class="copy-icon">
-                            <i class="fas fa-copy"></i>
-                          </div>
-                          </div>
-                          <div class="message-text">
-                            <div class="user" onmouseover="showIcons(this)" onmouseout="hideIcons(this)">
-                              <div class="profile-container">
-                                user
-                              </div>
-                              유저 입니다.
-                            </div>
-                            <div class="chatbot" onmouseover="showIcons(this)" onmouseout="hideIcons(this)">
-                              <div class="profile-container">
-                                <img src="images/profile.jpg" alt="chat Profile" class="profile-image">
-                              </div>
-                              챗봇
-                              <div class="icon-container">
-                                  <span class="copy-icon-left"><svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></span>
-                                  <span class="save-icon-left"><svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-download"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M12 17v-6" /><path d="M9.5 14.5l2.5 2.5l2.5 -2.5" /></svg></span>
-                              </div>
-                          </div> 
+                        </label>
+    
                         </div>
+                        <div class="message-text">
+                          <div class="user" onmouseover="showIcons(this)" onmouseout="hideIcons(this)">
+                            <div class="profile-container">
+                              <img src="images/profile.jpg" alt="chat Profile" class="profile-image">
+                              <span>User</span>
+                            </div>
+                            <div class="user-text">
+                            유저 입니다.
+                            </div>
+                          </div>
+                          
+                          <div class="chatbot" onmouseover="showIcons(this)" onmouseout="hideIcons(this)">
+                            <div class="profile-container">
+                              <img src="images/gpt.svg" alt="chat Profile" class="profile-image">
+                              <span>Chat</span>
+                            </div>
+                            <div class="chat-text">
+                            챗봇
+                            </div>
+                            <div class="icon-container">
+                                <span class="copy-icon-left"><svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></span>
+                                <span class="save-icon-left"><svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-download"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M12 17v-6" /><path d="M9.5 14.5l2.5 2.5l2.5 -2.5" /></svg></span>
+                            </div>
+                        </div> 
+                      </div>
+                  </div>
+              </div>
+                <div class="message bot-message">
+                  <div class="message-content">
+                      <div class="message-header">
+                      <select>
+                          <option value="option2">Claude 3</option>
+                          <option value="option1">ChatGPT</option>
+                          <option value="option3">Bling Copilot</option>
+                        </select>
+                      
+                        <!-- On/Off Button -->
+                        <label class="switch">
+                          <input type="checkbox" class="switch-toggle">
+  <span class="switch-label"></span>
+                        </label>
+
+                        </div>
+                        <div class="message-text">
+                          <div class="user" onmouseover="showIcons(this)" onmouseout="hideIcons(this)">
+                            <div class="profile-container">
+                              <img src="images/profile.jpg" alt="chat Profile" class="profile-image">
+                              <span>User</span>
+                            </div>
+                            <div class="user-text">
+                            유저 입니다.
+                            </div>
+                          </div>
+                          
+                          <div class="chatbot" onmouseover="showIcons(this)" onmouseout="hideIcons(this)">
+                            <div class="profile-container">
+                              <img src="images/claude.svg" alt="chat Profile" class="profile-image">
+                              <span>Chat</span>
+                            </div>
+                            <div class="chat-text">
+                            챗봇
+                            </div>
+                            <div class="icon-container">
+                                <span class="copy-icon-left"><svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></span>
+                                <span class="save-icon-left"><svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-download"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M12 17v-6" /><path d="M9.5 14.5l2.5 2.5l2.5 -2.5" /></svg></span>
+                            </div>
+                        </div> 
+                      </div>
+                  </div>
+              </div>
+              <div class="message bot-message">
+                <div class="message-content">
+                    <div class="message-header">
+                    <select>
+                      <option value="option3">Gemini</option>
+                        <option value="option1">ChatGPT</option>
+                        <option value="option2">Claude 3</option>
+                       
+                      </select>
+                    
+                      <!-- On/Off Button -->
+                      <label class="switch">
+                        <input type="checkbox" class="switch-toggle">
+<span class="switch-label"></span>
+                      </label>
+
+                      </div>
+                      <div class="message-text">
+                        <div class="user" onmouseover="showIcons(this)" onmouseout="hideIcons(this)">
+                          <div class="profile-container">
+                            <img src="images/profile.jpg" alt="chat Profile" class="profile-image">
+                            <span>User</span>
+                          </div>
+                          <div class="user-text">
+                          유저 입니다.
+                          </div>
+                        </div>
+                        
+                        <div class="chatbot" onmouseover="showIcons(this)" onmouseout="hideIcons(this)">
+                          <div class="profile-container">
+                            <img src="images/gemini.svg" alt="chat Profile" class="profile-image">
+                            <span>Chat</span>
+                          </div>
+                          <div class="chat-text">
+                          챗봇
+                          </div>
+                          <div class="icon-container">
+                              <span class="copy-icon-left"><svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></span>
+                              <span class="save-icon-left"><svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-download"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M12 17v-6" /><path d="M9.5 14.5l2.5 2.5l2.5 -2.5" /></svg></span>
+                          </div>
+                      </div> 
                     </div>
                 </div>
-                <div class="message bot-message">
-                    <div class="message-content">
-                        <div class="message-header">
-                        <select>
-                            <option value="option1">ChatGPT</option>
-                            <option value="option2">Clause 3</option>
-                            <option value="option3">Bling Copilot</option>
-                          </select>
-                        
-                          <!-- On/Off Button -->
-                          <label class="switch">
-                            <input type="checkbox" class="switch-toggle">
-    <span class="switch-label"></span>
-                          </label>
-                        
-                          <!-- 복사 아이콘 -->
-                          <div class="copy-icon">
-                            <i class="fas fa-copy"></i>
-                          </div>
-                          </div>
-                          <div class="message-text">
-                            <div class="user" onmouseover="showIcons(this)" onmouseout="hideIcons(this)">
-                              <div class="profile-container">
-                                user
-                              </div>
-                              유저 입니다.
-                            </div>
-                            <div class="chatbot" onmouseover="showIcons(this)" onmouseout="hideIcons(this)">
-                              <div class="profile-container">
-                                <img src="images/profile.jpg" alt="chat Profile" class="profile-image">
-                              </div>
-                              챗봇
-                              <div class="icon-container">
-                                  <span class="copy-icon-left"><svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></span>
-                                  <span class="save-icon-left"><svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-download"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M12 17v-6" /><path d="M9.5 14.5l2.5 2.5l2.5 -2.5" /></svg></span>
-                              </div>
-                          </div> 
-                        </div>
-                    </div>
-                </div>
-                <div class="message bot-message">
-                    <div class="message-content">
-                        <div class="message-header">
-                        <select>
-                            <option value="option1">ChatGPT</option>
-                            <option value="option2">Clause 3</option>
-                            <option value="option3">Bling Copilot</option>
-                          </select>
-                        
-                          <!-- On/Off Button -->
-                          <label class="switch">
-                            <input type="checkbox" class="switch-toggle">
-                            <span class="switch-label"></span>
-                          </label>
-                        
-                          <!-- 복사 아이콘 -->
-                          <div class="copy-icon">
-                            <i class="fas fa-copy"></i>
-                          </div>
-                          </div>
-                          <div class="message-text">
-                            <div class="user" onmouseover="showIcons(this)" onmouseout="hideIcons(this)">
-                              <div class="profile-container">
-                                user
-                              </div>
-                              유저 입니다.
-                            </div>
-                            <div class="chatbot" onmouseover="showIcons(this)" onmouseout="hideIcons(this)">
-                              <div class="profile-container">
-                                <img src="images/profile.jpg" alt="chat Profile" class="profile-image">
-                              </div>
-                              챗봇
-                              <div class="icon-container">
-                                  <span class="copy-icon-left"><svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></span>
-                                  <span class="save-icon-left"><svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-download"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M12 17v-6" /><path d="M9.5 14.5l2.5 2.5l2.5 -2.5" /></svg></span>
-                              </div>
-                          </div> 
-                        </div>
-                    </div>
-                    </div>
+            </div>
+           
                     <div class="collect_message">
                         <div class="message-content">
-                          <div class="message-header">
-                            <select>
-                              <option value="option1">ChatGPT</option>
-                              <option value="option2">Clause 3</option>
-                              <option value="option3">Bling Copilot</option>
-                            </select>
-                          
-                            <!-- On/Off Button -->
-                            <label class="switch">
-                              <input type="checkbox" class="switch-toggle">
-                              <span class="switch-label"></span>
-                            </label>
-                          
-                            <!-- 복사 아이콘 -->
-                            <div class="copy-icon">
-                              <i class="fas fa-copy"></i>
+                          <div class="message bot-message">
+                            <div class="message-content">
+                                <div class="message-header">
+                                <select>
+                                    <option value="option1">ChatGPT</option>
+                                    <option value="option2">Clause 3</option>
+                                    <option value="option3">Bling Copilot</option>
+                                  </select>
+                                
+                                  <!-- On/Off Button -->
+                                  <label class="switch">
+                                    <input type="checkbox" class="switch-toggle">
+              <span class="switch-label"></span>
+                                  </label>
+              
+                                  </div>
+                                  <div class="message-text">
+                                    <div class="user" onmouseover="showIcons(this)" onmouseout="hideIcons(this)">
+                                      <div class="profile-container">
+                                        <img src="images/profile.jpg" alt="chat Profile" class="profile-image">
+                                        <span>User</span>
+                                      </div>
+                                      <div class="user-text">
+                                      유저 입니다.
+                                      </div>
+                                    </div>
+                                    
+                                    <div class="chatbot" onmouseover="showIcons(this)" onmouseout="hideIcons(this)">
+                                      <div class="profile-container">
+                                        <img src="images/gpt.svg" alt="chat Profile" class="profile-image">
+                                        <span>Chat</span>
+                                      </div>
+                                      <div class="chat-text">
+                                      챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇
+                                      </div>
+                                      <div class="icon-container">
+                                          <span class="copy-icon-left"><svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-copy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></span>
+                                          <span class="save-icon-left"><svg  xmlns="http://www.w3.org/2000/svg"  width="15"  height="15"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-download"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M12 17v-6" /><path d="M9.5 14.5l2.5 2.5l2.5 -2.5" /></svg></span>
+                                      </div>
+                                  </div> 
+                                </div>
                             </div>
-                          </div>
+                        </div>
                           <div class="message-text">
                             <div class="user" onmouseover="showIcons(this)" onmouseout="hideIcons(this)">
                               <div class="profile-container">
@@ -301,52 +457,38 @@
                 </div>
             </div>
             <div class="input-container">
+              <!-- 1분할 아이콘 -->
+              <div class="icon">
+                <a href="index.html">
+                  <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-table"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z" /></svg>                                                      
+                  </a>
+              </div>
               <!-- 2분할 아이콘 -->
               <div class="icon">
                   <a href="index.html">
-                    <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect x="1" y="1" width="20" height="18" rx="4" stroke="#181818" stroke-width="2"/>
-                      <path d="M1 4C1 1.79086 2.79086 0 5 0H17C19.2091 0 21 1.79086 21 4V4H1V4Z" fill="#181818"/>
-                      <line x1="11" y1="4" x2="11" y2="20" stroke="#181818" stroke-width="2"/>
-                      </svg>                                             
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-table"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z" /><path d="M12 3v18" /></svg>                                                      
                     </a>
                 </div>
                 <!-- 3분할 아이콘 -->
                 <div class="icon">
                   <a href="3-collum.html">
-                    <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect x="1" y="1" width="20" height="18" rx="4" stroke="#181818" stroke-width="2"/>
-                      <path d="M1 4C1 1.79086 2.79086 0 5 0H17C19.2091 0 21 1.79086 21 4V4H1V4Z" fill="#181818"/>
-                      <line x1="7.75494" y1="4" x2="7.75494" y2="20" stroke="black" stroke-width="1.5"/>
-                      <line x1="14.2509" y1="4" x2="14.2509" y2="20" stroke="black" stroke-width="1.5"/>
-                      </svg>
-                      
+                    <!-- <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-layout-sidebar"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M9 4l0 16" /><path d="M15 4l0 16" /></svg> -->
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-table"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z" /><path d="M9 3v18" /><path d="M15 3v18" /></svg>   
                     </a>
                 </div>
                 <!-- 4분할 아이콘 -->
                 <div class="icon">
                   <a href="4-collum.html">
-                    <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect x="1" y="1" width="20" height="18" rx="4" stroke="#181818" stroke-width="2"/>
-                      <path d="M0.579956 4C0.579956 1.79086 2.37082 0 4.57996 0H17.3455C19.5546 0 21.3455 1.79086 21.3455 4V4H0.579956V4Z" fill="#181818"/>
-                      <line x1="11" y1="4" x2="11" y2="20" stroke="black" stroke-width="2"/>
-                      <line x1="22" y1="11" x2="0.58" y2="11" stroke="black" stroke-width="2"/>
-                      </svg>
-                      
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-table"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z" /><path d="M3 12h18" /><path d="M12 3v18" /></svg>                          
                     </a>
                 </div>
               <!-- 6분할 아이콘 -->
               <!-- <div class="icon">
                   <i class="fas fa-th"></i>
               </div> -->
-              <!-- 사진첩 아이콘 -->
-              <div class="icon">
-                <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="1" y="1" width="20" height="18" rx="4" stroke="#181818" stroke-width="2"/>
-                  <path d="M1 12.5C2.54386 9.62936 5.29323 -0.329957 10.4762 10.5C13.6305 17.0911 16.7141 11.83 17.4236 10.5C17.957 9.5 17.7579 9.70349 21 12" stroke="#181818" stroke-width="2"/>
-                  <ellipse cx="17.8096" cy="7" rx="1.04762" ry="1" fill="#181818"/>
-                  </svg>
-                              
+              <!-- 다크모드 -->
+              <div class="dark-mode" onclick="toggleDarkMode()">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-moon"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>   
               </div>
               <input type="text" id="user-input" placeholder="Type your message...">
               <button id="send-button"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-send"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14l11 -11" /><path d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5" /></svg></button>
