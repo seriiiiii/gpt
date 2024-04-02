@@ -483,7 +483,7 @@ h1 {
   flex: 1;
   padding:10px 0px;
 }
-.message-2-collum .message-content, .message-3-collum .message-content{
+.message-1-collum .message-content, .message-2-collum .message-content, .message-3-collum .message-content{
   height:calc(100vh - 170px);
 }
 .message-3-collum {
