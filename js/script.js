@@ -36,23 +36,18 @@ $(document).ready(function() {
     });
   });
 
-  // 메인 타이틀 클릭 이벤트 설정
   $('.main_title').click(function() {
     $(this).children('.sub-title').slideToggle();
     $(this).find('.arrow').toggleClass('rotate');
   });
 
-  // 네비게이션 플로드 버튼 클릭 이벤트 설정
   $('.nav_fold_btn').click(function () {
     $('body').toggleClass('nav_fold');
   });
 
-  // 설정 아이콘과 툴팁 관련 이벤트 설정
   $('.setting').hover(function() {
-    // 마우스 호버 인 시 설정 아이콘 옆에 툴팁 표시
     $(this).next('.tooltip').show();
   }, function() {
-    // 마우스가 벗어날 때 툴팁 숨김
     $(this).next('.tooltip').hide();
   });
 });
