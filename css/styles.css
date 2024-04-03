@@ -903,6 +903,9 @@ nav .nav_fold_btn {
   background-color: #282828;
   color: #bbb;
 }
+.dark-mode nav {
+  color: #bbb;
+}
 .dark-mode .svg {
   color: #bbb;
 }
@@ -920,9 +923,10 @@ nav .nav_fold_btn {
   border: 1px solid #bbb;
 }
 .dark-mode .input-container .icon {
-  color: #fff;
+  color: #bbb;
 }
-.dark-mode .main {
+#user-input::placeholder {
+  color: #bbb;
 }
 /*modal*/
 #modal {
