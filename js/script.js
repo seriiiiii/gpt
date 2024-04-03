@@ -25,17 +25,9 @@ $(document).ready(function () {
 
   // 수집 버튼 클릭 이벤트 설정
   $("#collectButton").click(function () {
-    var botMessages = document.querySelectorAll(".bot-message");
-    var collectMessages = document.querySelectorAll(".collect_message");
-
-    botMessages.forEach(function (message) {
-      message.style.display = "none";
-      collectButton.style.display = "none";
-    });
-
-    collectMessages.forEach(function (message) {
-      message.style.display = "flex";
-    });
+    $(".bot-message").hide();
+    $("#collectButton").hide();
+    $(".collect_message").show();
   });
 
   $(".main_title").click(function () {
@@ -58,38 +50,48 @@ $(document).ready(function () {
 });
 
 // 동적 최대 높이 설정
-window.onload = function () {
+$(window).on("load", function () {
   setDynamicMaxHeight();
-};
+});
 
 function setDynamicMaxHeight() {
-  var windowHeight = window.innerHeight;
+  var windowHeight = $(window).height();
   var containerHeight = windowHeight - 10;
 
-  var messageContents = document.querySelectorAll(".message-content");
-
-  messageContents.forEach(function (content) {
-    content.style.maxHeight = containerHeight + "px";
-  });
+  $(".message-content").css("max-height", containerHeight + "px");
 }
 
 // 다크 모드 토글
 function toggleDarkMode() {
-  document.body.classList.toggle("dark-mode");
+  $("body").toggleClass("dark-mode");
 }
 
 function openTab(evt, tabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
+  $(".tabcontent").hide();
+  $(".tablinks").removeClass("active");
+  $("#" + tabName).show();
+  $(evt.currentTarget).addClass("active");
 }
 
-document.getElementById("conversation").style.display = "none";
+$("#conversation").hide();
+
+$(document).ready(function () {
+  $("#add-tag").click(addTag);
+
+  $("#hashtag").keypress(function (e) {
+    if (e.which == 13) {
+      addTag();
+      e.preventDefault();
+    }
+  });
+
+  function addTag() {
+    var hashtagText = $("#hashtag").val().trim();
+    if (hashtagText !== "") {
+      hashtagText = "#" + hashtagText;
+      var tagButton = $("<button>").addClass("tag-button").text(hashtagText);
+      $("#hashtag").before(tagButton);
+      $("#hashtag").val("");
+    }
+  }
+});
