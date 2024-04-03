@@ -1,15 +1,15 @@
 $(document).ready(function () {
   // 스위치 토글 이벤트 설정
-  $(".switch-toggle").change(function () {
-    var $messageContent = $(this)
-      .closest(".bot-message")
-      .find(".message-content");
-    if (this.checked) {
-      $messageContent.addClass("dark-mode");
-    } else {
-      $messageContent.removeClass("dark-mode");
-    }
-  });
+  // $(".switch-toggle").change(function () {
+  //   var $messageContent = $(this)
+  //     .closest(".bot-message")
+  //     .find(".message-content");
+  //   if (this.checked) {
+  //     $messageContent.addClass("dark-mode");
+  //   } else {
+  //     $messageContent.removeClass("dark-mode");
+  //   }
+  // });
 
   // 서브 메뉴 토글 이벤트 설정
   $("#toggleSubMenu").click(function () {
