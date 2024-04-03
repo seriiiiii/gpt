@@ -95,3 +95,43 @@ $(document).ready(function () {
     }
   }
 });
+document.addEventListener("DOMContentLoaded", function () {
+  var editTooltipItem = document.querySelector(".edit");
+
+  var modal = document.getElementById("modal");
+  var modalOverlay = document.querySelector(".modal-overlay");
+
+  function openModal() {
+    modal.style.display = "block";
+    modalOverlay.style.display = "block";
+  }
+
+  function closeModal() {
+    modal.style.display = "none";
+    modalOverlay.style.display = "none";
+  }
+
+  editTooltipItem.addEventListener("click", openModal);
+
+  modalOverlay.addEventListener("click", closeModal);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  var chatList = document.querySelector(".popup");
+  var popBody = document.getElementById("pop_body");
+  var closePopup = document.getElementById("closePopup");
+
+  chatList.addEventListener("click", function () {
+    popBody.style.display = "block";
+  });
+
+  closePopup.addEventListener("click", function () {
+    popBody.style.display = "none";
+  });
+
+  window.addEventListener("click", function (event) {
+    if (event.target == popBody) {
+      popBody.style.display = "none";
+    }
+  });
+});
