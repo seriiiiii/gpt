@@ -922,6 +922,9 @@ nav .nav_fold_btn {
 .dark-mode .input-container {
   border: 1px solid #bbb;
 }
+.dark-mode #user-input {
+  color: #bbb;
+}
 .dark-mode .input-container .icon {
   color: #bbb;
 }
