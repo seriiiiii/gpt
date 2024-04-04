@@ -63,6 +63,25 @@ ul {
   z-index: 2;
   flex-grow: 1;
 }
+.centered-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.centered-content H1 {
+  font-size: 25px;
+}
+.centered-content p {
+  font-size: 18px;
+}
+.centered-content img {
+  max-width: 100%;
+}
 body.nav_fold .container,
 .bodyBox.nav_fold .container {
   width: calc(100% - 70px);
@@ -1104,4 +1123,37 @@ textarea::placeholder {
 .popup_title span {
   font-size: 12px;
   color: #fff;
+}
+/*스켈레톤*/
+@-webkit-keyframes skeleton-gradient {
+  0% {
+    background-color: rgba(165, 165, 165, 0.1);
+  }
+
+  50% {
+    background-color: rgba(165, 165, 165, 0.3);
+  }
+
+  100% {
+    background-color: rgba(165, 165, 165, 0.1);
+  }
+}
+
+@keyframes skeleton-gradient {
+  0% {
+    background-color: rgba(165, 165, 165, 0.1);
+  }
+
+  50% {
+    background-color: rgba(165, 165, 165, 0.3);
+  }
+
+  100% {
+    background-color: rgba(165, 165, 165, 0.1);
+  }
+}
+
+.skeleton-list-item {
+  -webkit-animation: skeleton-gradient 1.8s infinite ease-in-out;
+  animation: skeleton-gradient 1.8s infinite ease-in-out;
 }

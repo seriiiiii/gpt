@@ -135,3 +135,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+const skeletonItem = document.querySelectorAll(".skeleton-list-item");
+const hideskeleton = () => {
+  skeletonItem.forEach((element) => {
+    $(element).fadeOut();
+  });
+};
+window.onload = setTimeout(hideskeleton, 9000);
