@@ -427,13 +427,13 @@ h1 {
 .profile-container span {
   display: flex;
   align-items: center;
-  line-height: 30px;
+  line-height: 20px;
   font-weight: 600;
 }
 .profile-image {
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   margin-right: 5px;
 }
 .user:hover .icon-container,
