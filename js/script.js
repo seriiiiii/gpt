@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   var chatList = document.querySelector(".popup");
-  var popBody = document.getElementById("pop_body");
+  var popBody = document.getElementById("chat-modal_body");
   var closePopup = document.getElementById("closePopup");
 
   chatList.addEventListener("click", function () {
