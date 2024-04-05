@@ -975,7 +975,70 @@
           </button>
         </div>
       </nav>
-      <div class="container">
+      <div class="container skeleton-list-item">
+        <div class="main skeleton-list-item">
+          <div class="chat-container skeleton-list-item">
+            <!-- Bot Messages -->
+            <div
+              class="bot-message_container message-1-column skeleton-list-item"
+            >
+              <div class="message bot-message skeleton-list-item">
+                <div class="message-content skeleton-list-item">
+                  <div class="message-header skeleton-list-item">
+                    <div class="select_wrap skeleton-list-item">
+                      <select class="skeleton-list-item"></select>
+                    </div>
+                    <!-- On/Off Button -->
+                  </div>
+                  <div class="message-text skeleton-list-item">
+                    <div class="centered-content skeleton-list-item"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="input-container skeleton-list-item">
+              <!-- 1분할 아이콘 -->
+              <div class="icon skeleton-list-item" style="width: 20px"></div>
+              <!-- 2분할 아이콘 -->
+              <div class="icon skeleton-list-item" style="width: 20px"></div>
+              <!-- 3분할 아이콘 -->
+              <div class="icon skeleton-list-item" style="width: 20px"></div>
+              <!-- 4분할 아이콘 -->
+              <div class="icon skeleton-list-item" style="width: 20px"></div>
+              <!-- 6분할 아이콘 -->
+              <!-- <div class="icon">
+                        <i class="fas fa-th"></i>
+                    </div> -->
+              <!-- 다크모드 -->
+              <div
+                class="dark-mode skeleton-list-item"
+                onclick="toggleDarkMode()"
+                style="width: 20px"
+              >
+                <!-- <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="icon icon-tabler icons-tabler-filled icon-tabler-square"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M19 2h-14a3 3 0 0 0 -3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3 -3v-14a3 3 0 0 0 -3 -3z"
+                />
+              </svg> -->
+              </div>
+              <input type="text" id="user-input" class="skeleton-list-item" />
+              <button
+                id="send-button skeleton-list-item"
+                style="width: 20px"
+              ></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container" style="display: none">
         <div class="main">
           <div class="chat-container">
             <!-- Bot Messages -->
