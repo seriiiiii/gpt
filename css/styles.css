@@ -934,16 +934,48 @@ nav .nav_fold_btn {
 }
 /*dark-mode*/
 .dark-mode .container {
-  background-color: #282828;
+  background-color: #494949c9;
   color: #bbb;
 }
 .dark-mode nav {
+  color: #bbb;
+}
+.dark-mode .container {
+  background: #474747;
+  color: #bbb;
+}
+.dark-mode .nav_container {
+  background: #474747;
   color: #bbb;
 }
 .dark-mode .svg {
   color: #bbb;
 }
 .dark-mode .main span {
+  color: #bbb;
+}
+.dark-mode nav .nav_title_area .nav_title {
+  color: #bbb;
+}
+.dark-mode nav .nav_title_area .nav_title svg {
+  color: #bbb;
+}
+.dark-mode nav .nav_fold_btn {
+  color: #bbb;
+}
+.dark-mode .chat-list ul li {
+  color: #bbb;
+}
+.dark-mode .chat-list ul li p {
+  color: #bbb;
+}
+.dark-mode .nav_profile_area {
+  color: #bbb;
+}
+.dark-mode .tabcontent h2 {
+  color: #bbb;
+}
+.dark-mode nav .sub_menu .btn.active {
   color: #bbb;
 }
 .dark-mode .main select {
