@@ -409,7 +409,7 @@ h1 {
   color: #797979;
 }
 .icon-container span:hover {
-  color: #292626;
+  color: #615f5f;
 }
 .chatbot:hover .icon-container {
   display: block;
@@ -590,8 +590,8 @@ h1 {
   width: calc(100% - 50px);
   /* max-width: calc(100% - 65px); */
   padding: 5px;
-  border: 1px solid #292626;
-  /* background-color:#292626; */
+  border: 1px solid #615f5f;
+  /* background-color:#615f5f; */
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -603,7 +603,7 @@ h1 {
   background: none;
 }
 #user-input::placeholder {
-  color: #292626;
+  color: #615f5f;
 }
 select,
 option,
@@ -623,9 +623,11 @@ input:focus {
 }
 .input-container .icon {
   display: flex;
-  color: #292626;
+  color: #615f5f;
 }
-
+.input-container .icon.active svg {
+  color: #46b4c3;
+}
 .input-container input[type="text"] {
   flex: 1;
 }
@@ -709,7 +711,7 @@ nav .nav_fold_title_area {
 nav .nav_container {
   height: 100%;
   padding: 0 15px;
-  /* background-color: #292626; */
+  /* background-color: #615f5f; */
   background-color: #3b3b3b;
   display: flex;
   flex-direction: column;
@@ -850,7 +852,7 @@ nav .nav_fold_btn {
   padding:10px
 } */
 .sub_menu > .main_title > .sub_title li {
-  color: #292626;
+  color: #615f5f;
   font-size: 14px;
   border-bottom: 0px solid #e1e1e1;
   margin-left: 14px;
