@@ -975,8 +975,8 @@
           </button>
         </div>
       </nav>
-      <div class="container skeleton-list-item">
-        <div class="main skeleton-list-item">
+      <div class="container">
+        <div class="main">
           <div class="chat-container skeleton-list-item">
             <!-- Bot Messages -->
             <div
@@ -984,9 +984,15 @@
             >
               <div class="message bot-message skeleton-list-item">
                 <div class="message-content skeleton-list-item">
-                  <div class="message-header skeleton-list-item">
+                  <div
+                    class="message-header skeleton-list-item"
+                    style="border-bottom: none"
+                  >
                     <div class="select_wrap skeleton-list-item">
-                      <select class="skeleton-list-item"></select>
+                      <select
+                        class="skeleton-list-item"
+                        style="background: none"
+                      ></select>
                     </div>
                     <!-- On/Off Button -->
                   </div>
@@ -996,15 +1002,18 @@
                 </div>
               </div>
             </div>
-            <div class="input-container skeleton-list-item">
+            <div
+              class="input-container skeleton-list-item"
+              style="border: none"
+            >
               <!-- 1분할 아이콘 -->
-              <div class="icon skeleton-list-item" style="width: 20px"></div>
+              <div class="icon skeleton-list-item"></div>
               <!-- 2분할 아이콘 -->
-              <div class="icon skeleton-list-item" style="width: 20px"></div>
+              <div class="icon skeleton-list-item"></div>
               <!-- 3분할 아이콘 -->
-              <div class="icon skeleton-list-item" style="width: 20px"></div>
+              <div class="icon skeleton-list-item"></div>
               <!-- 4분할 아이콘 -->
-              <div class="icon skeleton-list-item" style="width: 20px"></div>
+              <div class="icon skeleton-list-item"></div>
               <!-- 6분할 아이콘 -->
               <!-- <div class="icon">
                         <i class="fas fa-th"></i>
@@ -1029,10 +1038,13 @@
                 />
               </svg> -->
               </div>
-              <input type="text" id="user-input" class="skeleton-list-item" />
+              <input
+                type="text"
+                id="user-input"
+                style="border: none"
+              />
               <button
                 id="send-button skeleton-list-item"
-                style="width: 20px"
               ></button>
             </div>
           </div>
