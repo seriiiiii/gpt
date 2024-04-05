@@ -150,8 +150,15 @@ nav.active + .container {
 .chat-list ul li:nth-child(2) {
   font-weight: 600;
 }
+.chat-list ul li:nth-child(3) {
+  font-size: 10px;
+}
+.chat-list ul li span {
+  font-size: 12px;
+}
 .chat-list ul li p {
   margin-left: auto;
+  font-size: 12px;
   line-height: 12px;
 }
 .gpt3 {
@@ -851,6 +858,7 @@ nav .nav_fold_btn {
   border: 1px solid #181818;
   padding: 10px;
   border: none;
+  font-size: 12px;
 }
 /* .sub_menu input::placeholder{
   padding:10px
