@@ -1157,7 +1157,7 @@ textarea::placeholder {
   -webkit-animation: skeleton-gradient 1.8s infinite ease-in-out;
   animation: skeleton-gradient 1.8s infinite ease-in-out;
 } */
-.skeleton_wrapper {
+.skeleton-list-item {
   position: absolute;
   z-index: 99;
 }

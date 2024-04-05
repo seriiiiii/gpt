@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-const selectItem = document.querySelectorAll(".skeleton_wrapper");
+const selectItem = document.querySelectorAll(".skeleton-list-item");
 const hideItem = () => {
   selectItem.forEach((element) => {
     $(element).fadeOut();
@@ -150,5 +150,5 @@ const hideItem = () => {
 };
 
 $(window).on("load", function () {
-  setTimeout(hideItem, 2000);
+  setTimeout(hideItem, 200000);
 });
