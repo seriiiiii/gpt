@@ -1125,7 +1125,7 @@ textarea::placeholder {
   color: #333;
 }
 /*스켈레톤*/
-@-webkit-keyframes skeleton-gradient {
+/* @-webkit-keyframes skeleton-gradient {
   0% {
     background-color: rgba(165, 165, 165, 0.1);
   }
@@ -1151,9 +1151,70 @@ textarea::placeholder {
   100% {
     background-color: rgba(165, 165, 165, 0.1);
   }
-}
+} */
 
-.skeleton-list-item {
+/* .skeleton-list-item {
   -webkit-animation: skeleton-gradient 1.8s infinite ease-in-out;
   animation: skeleton-gradient 1.8s infinite ease-in-out;
+} */
+
+.skeleton-list-item * {
+  background: linear-gradient(
+    120deg,
+    #e5e5e5 30%,
+    #f0f0f0 38%,
+    #f0f0f0 40%,
+    #e5e5e5 48%
+  );
+  border-radius: 1rem;
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 2s infinite;
+}
+.skeleton_select {
+  background: none;
+}
+.skeleton-btn {
+  width: 100px;
+}
+.skeleton-icon {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(
+    120deg,
+    #e5e5e5 30%,
+    #f0f0f0 38%,
+    #f0f0f0 40%,
+    #e5e5e5 48%
+  );
+  border-radius: 1rem;
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 2s infinite;
+}
+.sekeleton-send_btn {
+  margin-left: auto;
+}
+.skeleton-select {
+  background: none !important;
+}
+.skeleton-input_container {
+  border: none;
+}
+.skeleton_input {
+  height: 10px;
+  border-radius: 20px;
+  border: none;
+  background: linear-gradient(
+    120deg,
+    #e5e5e5 30%,
+    #f0f0f0 38%,
+    #f0f0f0 40%,
+    #e5e5e5 48%
+  );
+}
+@keyframes load {
+  100% {
+    background-position: -100% 0;
+  }
 }

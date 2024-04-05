@@ -141,4 +141,4 @@ const hideskeleton = () => {
     $(element).fadeOut();
   });
 };
-window.onload = setTimeout(hideskeleton, 9000);
+window.onload = setTimeout(hideskeleton, 200000);
