@@ -74,14 +74,6 @@ function openTab(evt, tabName) {
 }
 $("#conversation").hide();
 
-function openTab(evt, tabName) {
-  $(".tabcontent").hide();
-  $(".tablinks").removeClass("active");
-  $("#" + tabName).show();
-  $(evt.currentTarget).addClass("active");
-}
-$("#skeleton-conversation").hide();
-
 $(document).ready(function () {
   $("#add-tag").click(addTag);
 
@@ -142,13 +134,27 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-const selectItem = document.querySelectorAll(".skeleton-list-item");
-const hideItem = () => {
-  selectItem.forEach((element) => {
-    $(element).fadeOut();
-  });
-};
+// const selectItem = document.querySelectorAll(".skeleton-list-item");
+// const hideItem = () => {
+//   selectItem.forEach((element) => {
+//     $(element).fadeOut();
+//   });
+// };
 
-$(window).on("load", function () {
-  setTimeout(hideItem, 200000);
-});
+// $(window).on("load", function () {
+//   setTimeout(hideItem, 200000);
+// });
+
+var currentPage = window.location.pathname;
+
+var nextPage;
+if (currentPage === "/skeleton-4-column.html") {
+  nextPage = "4-column.html";
+} else {
+}
+
+if (nextPage) {
+  setTimeout(function () {
+    window.location.href = nextPage;
+  }, 2000);
+}
