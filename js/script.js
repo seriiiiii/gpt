@@ -72,8 +72,15 @@ function openTab(evt, tabName) {
   $("#" + tabName).show();
   $(evt.currentTarget).addClass("active");
 }
-
 $("#conversation").hide();
+
+function openTab(evt, tabName) {
+  $(".tabcontent").hide();
+  $(".tablinks").removeClass("active");
+  $("#" + tabName).show();
+  $(evt.currentTarget).addClass("active");
+}
+$("#skeleton-conversation").hide();
 
 $(document).ready(function () {
   $("#add-tag").click(addTag);
@@ -135,10 +142,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-const skeletonItem = document.querySelectorAll(".skeleton-list-item");
-const hideskeleton = () => {
-  skeletonItem.forEach((element) => {
+const selectItem = document.querySelectorAll(".skeleton_wrapper");
+const hideItem = () => {
+  selectItem.forEach((element) => {
     $(element).fadeOut();
   });
 };
-window.onload = setTimeout(hideskeleton, 200000);
+
+$(window).on("load", function () {
+  setTimeout(hideItem, 2000);
+});

@@ -1157,7 +1157,10 @@ textarea::placeholder {
   -webkit-animation: skeleton-gradient 1.8s infinite ease-in-out;
   animation: skeleton-gradient 1.8s infinite ease-in-out;
 } */
-
+.skeleton_wrapper {
+  position: absolute;
+  z-index: 99;
+}
 .skeleton-list-item * {
   background: linear-gradient(
     120deg,
@@ -1170,6 +1173,13 @@ textarea::placeholder {
   background-size: 200% 100%;
   background-position: 100% 0;
   animation: load 2s infinite;
+}
+.skeleton-nav-icon {
+  width: 15px;
+  height: 15px;
+}
+.skeleton-list-item span {
+  width: 80%;
 }
 .skeleton_select {
   background: none;
@@ -1196,7 +1206,7 @@ textarea::placeholder {
   margin-left: auto;
 }
 .skeleton-select {
-  background: none !important;
+  background: none;
 }
 .skeleton-input_container {
   border: none;
