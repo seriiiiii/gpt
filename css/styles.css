@@ -97,6 +97,7 @@ nav.active + .container {
 .chat-list_wrap {
   max-height: calc(100vh - 350px);
   overflow-y: auto;
+  padding: 0px 5px 0px 0px;
 }
 .chat-list ul {
   padding: 3px 10px;
@@ -728,10 +729,16 @@ nav .nav_wrap {
   flex: 1;
   overflow-y: auto;
 }
+nav .sub_menu > .btn {
+  height: 40px;
+}
 nav .sub_menu .btn {
   width: 100%;
   margin-bottom: 10px;
   font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 nav .nav_list_title {
   font-weight: 600;
@@ -1023,14 +1030,11 @@ nav .nav_fold_btn {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9998;
 }
-.settings-container {
+.chat-modal_body .main-setting-modal .settings-container {
   width: 300px;
   padding: 10px 20px;
-  border: 1px solid #ccc;
   border-radius: 8px;
   text-align: center;
-  background-color: #3d3d3d;
-  color: #fff;
   text-align: left;
 }
 .settings-container h2 {
@@ -1080,7 +1084,7 @@ textarea::placeholder {
   margin: 0;
   padding: 0;
   font-size: 10px;
-  color: #46b4c3;
+  color: #09225f;
 }
 .button-like-text {
   display: inline-block;
@@ -1124,6 +1128,9 @@ textarea::placeholder {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 99;
+}
+.chat-modal_body .message-1-column {
+  width: 100%;
 }
 .chat-modal_body .main {
   background: #fff;
