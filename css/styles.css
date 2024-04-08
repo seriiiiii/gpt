@@ -14,7 +14,8 @@
   font-size: 14px;
 }
 body {
-  overflow-y: hidden;
+  padding: 0;
+  margin: 0;
 }
 ul {
   padding-inline-start: 0px;
@@ -292,7 +293,7 @@ h1 {
 }
 .user-text,
 .chat-text {
-  padding: 5px 0px 0px 30px;
+  padding: 5px 0px 0px 25px;
 }
 .bot-message_container {
   width: 100%;
@@ -399,6 +400,10 @@ h1 {
   font-weight: 600;
   color: #484848;
 }
+.chatbot {
+  background: #f1f1f1;
+  padding: 10px;
+}
 .chatbot,
 .user {
   position: relative;
@@ -423,8 +428,7 @@ h1 {
   display: block;
 }
 
-.user,
-.chatbot {
+.user {
   padding: 0px 10px 0px 10px;
   margin: 0px 0px 20px 0px;
   width: -webkit-fill-available;
@@ -942,75 +946,94 @@ nav .nav_fold_btn {
 /*dark-mode*/
 .dark-mode .dark-mode-svg {
   display: none;
+  color: #8b8d8f;
 }
-
+.dark-mode .logo_svg {
+  color: #fff;
+}
+.dark-mode .nav_title svg {
+  stroke: #e5e5e5;
+}
+.dark-mode .message {
+  background-color: #4b4b4b;
+}
 .dark-mode .light-mode-svg {
   display: block;
   color: #8b8d8f;
 }
-.dark-mode .container {
-  background-color: #494949c9;
-  color: #bbb;
+.dark-mode .chatbot {
+  background: #36383b;
+}
+.dark-mode .chat-list ul li svg {
+  color: #e5e5e5;
+  /* fill: #bbb; */
 }
 .dark-mode nav {
-  color: #bbb;
+  color: #e5e5e5;
 }
 .dark-mode .container {
   background: #474747;
-  color: #bbb;
+  color: #e5e5e5;
+  border-left: 1px solid #e5e5e5;
 }
 .dark-mode .nav_container {
   background: #474747;
-  color: #bbb;
+  color: #e5e5e5;
 }
 .dark-mode .svg {
-  color: #bbb;
+  color: #e5e5e5;
 }
 .dark-mode .main span {
-  color: #bbb;
+  color: #e5e5e5;
 }
 .dark-mode nav .nav_title_area .nav_title {
-  color: #bbb;
+  color: #fff;
 }
 .dark-mode nav .nav_title_area .nav_title svg {
-  color: #bbb;
+  fill: #fff;
 }
 .dark-mode nav .nav_fold_btn {
-  color: #bbb;
+  color: #e5e5e5;
 }
 .dark-mode .chat-list ul li {
-  color: #bbb;
+  color: #e5e5e5;
 }
 .dark-mode .chat-list ul li p {
-  color: #bbb;
+  color: #e5e5e5;
 }
 .dark-mode .nav_profile_area {
-  color: #bbb;
+  color: #e5e5e5;
 }
 .dark-mode .tabcontent h2 {
-  color: #bbb;
+  color: #e5e5e5;
 }
 .dark-mode nav .sub_menu .btn.active {
-  color: #bbb;
+  color: #e5e5e5;
 }
 .dark-mode .main select {
-  color: #bbb;
+  color: #e5e5e5;
 }
 .dark-mode select {
-  color: #fff;
+  color: #e5e5e5;
   background-image: url(../images/down-arrow_white.png);
 }
 .dark-mode .input-container {
-  border: 1px solid #bbb;
+  border: 1px solid #e5e5e5;
 }
 .dark-mode #user-input {
-  color: #bbb;
+  color: #e5e5e5;
 }
-.dark-mode .input-container .icon {
-  color: #bbb;
-}
+
 #user-input::placeholder {
   color: #bbb;
+}
+.dark-mode .tab button {
+  background: #5c5c5c;
+  color: #e5e5e5;
+}
+.dark-mode .tab button.active {
+  background: none;
+  color: #e5e5e5;
 }
 /*modal*/
 #modal {
