@@ -156,7 +156,7 @@ if (currentPage === "/skeleton-4-column.html") {
 if (nextPage) {
   setTimeout(function () {
     window.location.href = nextPage;
-  }, 200000);
+  }, 20000);
 }
 function toggleDarkMode() {
   $("body").toggleClass("dark-mode");
