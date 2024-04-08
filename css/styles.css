@@ -944,6 +944,9 @@ nav .nav_fold_btn {
   transition: transform 0.3s ease;
 }
 /*dark-mode*/
+.dark-mode .chat-list.active {
+  background: #767676;
+}
 .dark-mode .dark-mode-svg {
   display: none;
   color: #8b8d8f;
