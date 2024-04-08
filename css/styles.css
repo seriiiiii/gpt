@@ -942,7 +942,6 @@ nav .nav_fold_btn {
 /*dark-mode*/
 .dark-mode .dark-mode-svg {
   display: none;
-  color: #8b8d8f;
 }
 
 .dark-mode .light-mode-svg {
