@@ -11,8 +11,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
-    <div id="chat-modal_body" class="chat-modal_body">
-      <div class="main">
+    <div id="modal" class="chat_modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
         <div class="chat-modal_title">
           살수대첩 발생 연도<span> #역사 #공부</span>
           <span class="close" id="closePopup">&times;</span>
@@ -124,7 +125,9 @@
         </div>
       </div>
     </div>
-    <div id="modal" class="settings-container">
+    <div id="modal" class="settings_modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
         <h2>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -165,8 +168,10 @@
           <button class="btn btn_secondary">취소</button>
           <button class="btn btn_primary">확인</button>
         </div>
+      </div>
     </div>
     <div id="modal" class="delete_modal">
+      <div class="modal-overlay"></div>
       <div class="modal-content">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -190,7 +195,7 @@
         <button id="confirmBtnNo" class="btn btn_primary">아니오</button>
       </div>
     </div>
-    <div class="modal-overlay"></div>
+
     <div id="wrapper">
       <nav>
         <div class="nav_container">
