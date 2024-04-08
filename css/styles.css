@@ -403,6 +403,7 @@ h1 {
 .chatbot {
   background: #f1f1f1;
   padding: 10px;
+  margin-bottom: 20px;
 }
 .chatbot,
 .user {
@@ -1048,11 +1049,16 @@ nav .nav_fold_btn {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
 }
-.chat_modal .message-1-column {
+.chat_modal .bot-message_container {
   width: 100%;
+}
+.chat_modal .bot-message_container .message-content {
+  height: calc(100vh - 260px);
+}
+.chat_modal .message-4-column .message-content {
+  height: calc(50vh - 145px);
 }
 .chat_modal .modal-content {
   background: #fff;
@@ -1075,11 +1081,11 @@ nav .nav_fold_btn {
   color: #333;
   background-image: url(../images/down-arrow.png);
 }
-.chat_modal .message-4-column {
+/* .chat_modal .message-4-column {
   height: calc(50vh - 130px);
-}
+} */
 .chat_modal .message-4-column .message-content {
-  height: calc(50vh - 130px);
+  height: calc(50vh - 150px);
 }
 .chat_modal select option {
   background: #5d5d5d;
@@ -1093,7 +1099,6 @@ nav .nav_fold_btn {
 }
 .chat-modal_title {
   height: 35px;
-  border-bottom: 1px solid #fff;
   font-size: 16px;
   font-weight: 600;
   color: #46b4c3;
@@ -1117,8 +1122,7 @@ nav .nav_fold_btn {
   transform: translate(-50%, -50%);
   background-color: #fff;
   border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px 40px;
   z-index: 9999;
 }
 .settings_modal h2 {
@@ -1146,6 +1150,8 @@ textarea {
   padding: 5px;
   resize: none;
   overflow: auto;
+  border: none;
+  background: #f1f1f1;
 }
 .settings_modal input,
 textarea::placeholder {
@@ -1231,7 +1237,6 @@ textarea::placeholder {
   border: none;
 }
 .btn_secondary {
-  background-color: #fff;
   color: #333;
 }
 .btn_primary {
