@@ -403,12 +403,12 @@ h1 {
 .chatbot {
   background: #f1f1f1;
   padding: 10px;
-  margin-bottom: 20px;
 }
 .chatbot,
 .user {
   position: relative;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .icon-container {
