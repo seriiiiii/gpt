@@ -940,6 +940,15 @@ nav .nav_fold_btn {
   transition: transform 0.3s ease;
 }
 /*dark-mode*/
+.dark-mode .dark-mode-svg {
+  display: none;
+  color: #8b8d8f;
+}
+
+.dark-mode .light-mode-svg {
+  display: block;
+  color: #8b8d8f;
+}
 .dark-mode .container {
   background-color: #494949c9;
   color: #bbb;

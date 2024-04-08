@@ -158,3 +158,14 @@ if (nextPage) {
     window.location.href = nextPage;
   }, 2000);
 }
+function toggleDarkMode() {
+  $("body").toggleClass("dark-mode");
+
+  if ($("body").hasClass("dark-mode")) {
+    $(".dark-mode-svg").css("display", "block");
+    $(".light-mode-svg").css("display", "none");
+  } else {
+    $(".dark-mode-svg").css("display", "none");
+    $(".light-mode-svg").css("display", "block");
+  }
+}
