@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('../include/head.html')
+  </head>
+  <body>
+    <div id="modal" class="chat_modal">
+      @@include('../include/chat_modal.html')
+    </div>
+    <div id="modal" class="settings_modal">
+      @@include('../include/settings_modal.html')
+    </div>
+    <div id="modal" class="delete_modal">
+      @@include('../include/delete_modal.html')
+    </div>
+
+    <div id="wrapper">
+      <nav>@@include('../include/nav.html')</nav>
+      <div class="container">
+        <div class="main">
+          <div class="chat-container">
+            <!-- Bot Messages -->
+            <div class="bot-message_container message-3-column">
+              <div class="message bot-message">
+                <div class="message-content">
+                  <div class="message-header">
+                    <select>
+                      <option value="option1">ChatGPT 3.5</option>
+                      <option value="option2">Claude 3</option>
+                      <option value="option3">Gemini</option>
+                    </select>
+
+                    <!-- On/Off Button -->
+                    <label class="switch">
+                      <input type="checkbox" class="switch-toggle" />
+                      <span class="switch-label"></span>
+                    </label>
+                  </div>
+                  <div class="message-text">
+                    <div
+                      class="user"
+                      onmouseover="showIcons(this)"
+                      onmouseout="hideIcons(this)"
+                    >
+                      <div class="profile-container">
+                        <img
+                          src="styles/images/profile.jpg"
+                          alt="chat Profile"
+                          class="profile-image"
+                        />
+                        <span>User</span>
+                      </div>
+                      <div class="user-text">
+                        중앙선거관리위원회는 법령의 범위안에서
+                        선거관리·국민투표관리 또는 정당사무에 관한 규칙을 제정할
+                        수 있으며, 법률에 저촉되지 아니하는 범위안에서
+                        내부규율에 관한 규칙을 제정할 수 있다.
+                      </div>
+                    </div>
+
+                    <div
+                      class="chatbot"
+                      onmouseover="showIcons(this)"
+                      onmouseout="hideIcons(this)"
+                    >
+                      <div class="profile-container">
+                        <img
+                          src="styles/images/gpt.svg"
+                          alt="chat Profile"
+                          class="profile-image"
+                        />
+                        <span>Chat</span>
+                      </div>
+                      <div class="chat-text">
+                        연소자의 근로는 특별한 보호를 받는다. 대통령은 법률안의
+                        일부에 대하여 또는 법률안을 수정하여 재의를 요구할 수
+                        없다. 근로조건의 기준은 인간의 존엄성을 보장하도록
+                        법률로 정한다. 행정각부의 설치·조직과 직무범위는 법률로
+                        정한다. 감사위원은 원장의 제청으로 대통령이 임명하고, 그
+                        임기는 4년으로 하며, 1차에 한하여 중임할 수 있다.
+                        대통령은 국회에 출석하여 발언하거나 서한으로 의견을
+                        표시할 수 있다. 재의의 요구가 있을 때에는 국회는 재의에
+                        붙이고, 재적의원과반수의 출석과 출석의원 3분의 2 이상의
+                        찬성으로 전과 같은 의결을 하면 그 법률안은 법률로서
+                        확정된다. 국무회의는 정부의 권한에 속하는 중요한 정책을
+                        심의한다. 대통령은 필요하다고 인정할 때에는
+                        외교·국방·통일 기타 국가안위에 관한 중요정책을
+                        국민투표에 붙일 수 있다. 공공필요에 의한 재산권의
+                        수용·사용 또는 제한 및 그에 대한 보상은 법률로써 하되,
+                        정당한 보상을 지급하여야 한다. 법관은 탄핵 또는 금고
+                        이상의 형의 선고에 의하지 아니하고는 파면되지 아니하며,
+                        징계처분에 의하지 아니하고는 정직·감봉 기타 불리한
+                        처분을 받지 아니한다.
+                      </div>
+                      <div class="icon-container">
+                        <span class="copy-icon-left"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15"
+                            height="15"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-copy"
+                          >
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                              d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z"
+                            />
+                            <path
+                              d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1"
+                            />
+                          </svg>
+                        </span>
+                        <span class="save-icon-left"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15"
+                            height="15"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-file-download"
+                          >
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                            <path
+                              d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
+                            />
+                            <path d="M12 17v-6" />
+                            <path d="M9.5 14.5l2.5 2.5l2.5 -2.5" />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="message bot-message">
+                <div class="message-content">
+                  <div class="message-header">
+                    <select>
+                      <option value="option1">ChatGPT 3.5</option>
+                      <option value="option2">Claude 3</option>
+                      <option value="option3">Gemini</option>
+                    </select>
+
+                    <!-- On/Off Button -->
+                    <label class="switch">
+                      <input type="checkbox" class="switch-toggle" />
+                      <span class="switch-label"></span>
+                    </label>
+                  </div>
+                  <div class="message-text">
+                    <div
+                      class="user"
+                      onmouseover="showIcons(this)"
+                      onmouseout="hideIcons(this)"
+                    >
+                      <div class="profile-container">
+                        <img
+                          src="styles/images/profile.jpg"
+                          alt="chat Profile"
+                          class="profile-image"
+                        />
+                        <span>User</span>
+                      </div>
+                      <div class="user-text">
+                        중앙선거관리위원회는 법령의 범위안에서
+                        선거관리·국민투표관리 또는 정당사무에 관한 규칙을 제정할
+                        수 있으며, 법률에 저촉되지 아니하는 범위안에서
+                        내부규율에 관한 규칙을 제정할 수 있다.
+                      </div>
+                    </div>
+
+                    <div
+                      class="chatbot"
+                      onmouseover="showIcons(this)"
+                      onmouseout="hideIcons(this)"
+                    >
+                      <div class="profile-container">
+                        <img
+                          src="styles/images/gpt.svg"
+                          alt="chat Profile"
+                          class="profile-image"
+                        />
+                        <span>Chat</span>
+                      </div>
+                      <div class="chat-text">
+                        국회는 의원의 자격을 심사하며, 의원을 징계할 수 있다.
+                        공공필요에 의한 재산권의 수용·사용 또는 제한 및 그에
+                        대한 보상은 법률로써 하되, 정당한 보상을 지급하여야
+                        한다.
+                      </div>
+                      <div class="icon-container">
+                        <span class="copy-icon-left"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15"
+                            height="15"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-copy"
+                          >
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                              d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z"
+                            />
+                            <path
+                              d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1"
+                            /></svg
+                        ></span>
+                        <span class="save-icon-left"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15"
+                            height="15"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-file-download"
+                          >
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                            <path
+                              d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
+                            />
+                            <path d="M12 17v-6" />
+                            <path d="M9.5 14.5l2.5 2.5l2.5 -2.5" /></svg
+                        ></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="message bot-message">
+                <div class="message-content">
+                  <div class="message-header">
+                    <select>
+                      <option value="option1">ChatGPT 3.5</option>
+                      <option value="option2">Claude 3</option>
+                      <option value="option3">Gemini</option>
+                    </select>
+
+                    <!-- On/Off Button -->
+                    <label class="switch">
+                      <input type="checkbox" class="switch-toggle" />
+                      <span class="switch-label"></span>
+                    </label>
+                  </div>
+                  <div class="message-text">
+                    <div
+                      class="user"
+                      onmouseover="showIcons(this)"
+                      onmouseout="hideIcons(this)"
+                    >
+                      <div class="profile-container">
+                        <img
+                          src="styles/images/profile.jpg"
+                          alt="chat Profile"
+                          class="profile-image"
+                        />
+                        <span>User</span>
+                      </div>
+                      <div class="user-text">
+                        중앙선거관리위원회는 법령의 범위안에서
+                        선거관리·국민투표관리 또는 정당사무에 관한 규칙을 제정할
+                        수 있으며, 법률에 저촉되지 아니하는 범위안에서
+                        내부규율에 관한 규칙을 제정할 수 있다.
+                      </div>
+                    </div>
+
+                    <div
+                      class="chatbot"
+                      onmouseover="showIcons(this)"
+                      onmouseout="hideIcons(this)"
+                    >
+                      <div class="profile-container">
+                        <img
+                          src="styles/images/gpt.svg"
+                          alt="chat Profile"
+                          class="profile-image"
+                        />
+                        <span>Chat</span>
+                      </div>
+                      <div class="chat-text">
+                        국회는 의원의 자격을 심사하며, 의원을 징계할 수 있다.
+                        공공필요에 의한 재산권의 수용·사용 또는 제한 및 그에
+                        대한 보상은 법률로써 하되, 정당한 보상을 지급하여야
+                        한다.
+                      </div>
+                      <div class="icon-container">
+                        <span class="copy-icon-left"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15"
+                            height="15"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-copy"
+                          >
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                              d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z"
+                            />
+                            <path
+                              d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1"
+                            /></svg
+                        ></span>
+                        <span class="save-icon-left"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15"
+                            height="15"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-file-download"
+                          >
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                            <path
+                              d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
+                            />
+                            <path d="M12 17v-6" />
+                            <path d="M9.5 14.5l2.5 2.5l2.5 -2.5" /></svg
+                        ></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="collect_message">
+                <div class="message-content">
+                  <div class="message bot-message">
+                    <div class="message-content">
+                      <div class="message-header">
+                        <select>
+                          <option value="option1">ChatGPT</option>
+                          <option value="option2">Clause 3</option>
+                          <option value="option3">Gemini</option>
+                        </select>
+
+                        <!-- On/Off Button -->
+                        <label class="switch">
+                          <input type="checkbox" class="switch-toggle" />
+                          <span class="switch-label"></span>
+                        </label>
+                      </div>
+                      <div class="message-text">
+                        <div
+                          class="user"
+                          onmouseover="showIcons(this)"
+                          onmouseout="hideIcons(this)"
+                        >
+                          <div class="profile-container">
+                            <img
+                              src="styles/images/profile.jpg"
+                              alt="chat Profile"
+                              class="profile-image"
+                            />
+                            <span>User</span>
+                          </div>
+                          <div class="user-text">
+                            중앙선거관리위원회는 법령의 범위안에서
+                            선거관리·국민투표관리 또는 정당사무에 관한 규칙을
+                            제정할 수 있으며, 법률에 저촉되지 아니하는
+                            범위안에서 내부규율에 관한 규칙을 제정할 수 있다.
+                          </div>
+                        </div>
+
+                        <div
+                          class="chatbot"
+                          onmouseover="showIcons(this)"
+                          onmouseout="hideIcons(this)"
+                        >
+                          <div class="profile-container">
+                            <img
+                              src="styles/images/gpt.svg"
+                              alt="chat Profile"
+                              class="profile-image"
+                            />
+                            <span>Chat</span>
+                          </div>
+                          <div class="chat-text">
+                            새로운 회계연도가 개시될 때까지 예산안이 의결되지
+                            못한 때에는 정부는 국회에서 예산안이 의결될 때까지
+                            다음의 목적을 위한 경비는 전년도 예산에 준하여
+                            집행할 수 있다. 모든 국민은 건강하고 쾌적한 환경에서
+                            생활할 권리를 가지며, 국가와 국민은 환경보전을
+                            위하여 노력하여야 한다. 교육의 자주성·전문성·정치적
+                            중립성 및 대학의 자율성은 법률이 정하는 바에 의하여
+                            보장된다. 나는 헌법을 준수하고 국가를 보위하며
+                            조국의 평화적 통일과 국민의 자유와 복리의 증진 및
+                            민족문화의 창달에 노력하여 대통령으로서의 직책을
+                            성실히 수행할 것을 국민 앞에 엄숙히 선서합니다.
+                            국정의 중요한 사항에 관한 대통령의 자문에 응하기
+                            위하여 국가원로로 구성되는 국가원로자문회의를 둘 수
+                            있다. 모든 국민은 인간으로서의 존엄과 가치를 가지며,
+                            행복을 추구할 권리를 가진다. 국가는 개인이 가지는
+                            불가침의 기본적 인권을 확인하고 이를 보장할 의무를
+                            진다. 모든 국민은 법률이 정하는 바에 의하여 국방의
+                            의무를 진다. 대통령은 법률이 정하는 바에 의하여
+                            사면·감형 또는 복권을 명할 수 있다. 대법원장과
+                            대법관이 아닌 법관의 임기는 10년으로 하며, 법률이
+                            정하는 바에 의하여 연임할 수 있다.
+                          </div>
+                          <div class="icon-container">
+                            <span class="copy-icon-left"
+                              ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="15"
+                                height="15"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="icon icon-tabler icons-tabler-outline icon-tabler-copy"
+                              >
+                                <path
+                                  stroke="none"
+                                  d="M0 0h24v24H0z"
+                                  fill="none"
+                                />
+                                <path
+                                  d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z"
+                                />
+                                <path
+                                  d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1"
+                                /></svg
+                            ></span>
+                            <span class="save-icon-left"
+                              ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="15"
+                                height="15"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="icon icon-tabler icons-tabler-outline icon-tabler-file-download"
+                              >
+                                <path
+                                  stroke="none"
+                                  d="M0 0h24v24H0z"
+                                  fill="none"
+                                />
+                                <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                                <path
+                                  d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
+                                />
+                                <path d="M12 17v-6" />
+                                <path d="M9.5 14.5l2.5 2.5l2.5 -2.5" /></svg
+                            ></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="message-text">
+                    <div
+                      class="user"
+                      onmouseover="showIcons(this)"
+                      onmouseout="hideIcons(this)"
+                    >
+                      <div class="profile-container">user</div>
+                      국가안전보장회의의 조직·직무범위 기타 필요한 사항은 법률로
+                      정한다.
+                    </div>
+                    <div
+                      class="chatbot"
+                      onmouseover="showIcons(this)"
+                      onmouseout="hideIcons(this)"
+                    >
+                      <div class="profile-container">
+                        <img
+                          src="styles/images/profile.jpg"
+                          alt="chat Profile"
+                          class="profile-image"
+                        />
+                      </div>
+                      군인은 현역을 면한 후가 아니면 국무총리로 임명될 수 없다.
+                      누구든지 체포 또는 구속의 이유와 변호인의 조력을 받을
+                      권리가 있음을 고지받지 아니하고는 체포 또는 구속을 당하지
+                      아니한다. 체포 또는 구속을 당한 자의 가족등 법률이 정하는
+                      자에게는 그 이유와 일시·장소가 지체없이 통지되어야 한다.
+                      <div class="icon-container">
+                        <span class="copy-icon-left"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15"
+                            height="15"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-copy"
+                          >
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                              d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z"
+                            />
+                            <path
+                              d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1"
+                            /></svg
+                        ></span>
+                        <span class="save-icon-left"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15"
+                            height="15"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-file-download"
+                          >
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                            <path
+                              d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
+                            />
+                            <path d="M12 17v-6" />
+                            <path d="M9.5 14.5l2.5 2.5l2.5 -2.5" /></svg
+                        ></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <button id="collectButton" class="btn btn_primary">취합하기</button> -->
+            <div class="input-container">
+              <!-- 1분할 아이콘 -->
+              <div class="icon">
+                <a href="index.html">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-table"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <!-- 2분할 아이콘 -->
+              <div class="icon">
+                <a href="2-column.html">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-table"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z"
+                    />
+                    <path d="M12 3v18" />
+                  </svg>
+                </a>
+              </div>
+              <!-- 3분할 아이콘 -->
+              <div class="icon">
+                <a href="3-column.html">
+                  <!-- <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-layout-sidebar"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M9 4l0 16" /><path d="M15 4l0 16" /></svg> -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-table"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z"
+                    />
+                    <path d="M9 3v18" />
+                    <path d="M15 3v18" />
+                  </svg>
+                </a>
+              </div>
+              <!-- 4분할 아이콘 -->
+              <div class="icon">
+                <a href="4-column.html">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-table"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z"
+                    />
+                    <path d="M3 12h18" />
+                    <path d="M12 3v18" />
+                  </svg>
+                </a>
+              </div>
+              <!-- 6분할 아이콘 -->
+              <!-- <div class="icon">
+                      <i class="fas fa-th"></i>
+                  </div> -->
+              <!-- 다크모드 -->
+              <div class="dark-mode" onclick="toggleDarkMode()">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-moon"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"
+                  />
+                </svg>
+              </div>
+              <input
+                type="text"
+                id="user-input"
+                placeholder="Type your message..."
+              />
+              <button id="send-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-send"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M10 14l11 -11" />
+                  <path
+                    d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5"
+                  />
+                </svg>
+                <!-- <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="icon icon-tabler icons-tabler-filled icon-tabler-square"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M19 2h-14a3 3 0 0 0 -3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3 -3v-14a3 3 0 0 0 -3 -3z"
+                />
+              </svg> -->
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>

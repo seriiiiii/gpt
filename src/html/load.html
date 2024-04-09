@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('../include/head.html')
+  </head>
+  <body>
+    <div id="modal" class="chat_modal">
+      @@include('../include/chat_modal.html')
+    </div>
+    <div id="modal" class="settings_modal">
+      @@include('../include/settings_modal.html')
+    </div>
+    <div id="modal" class="delete_modal">
+      @@include('../include/delete_modal.html')
+    </div>
+
+    <div id="wrapper">
+      <nav>@@include('../include/nav.html')</nav>
+      <div class="container">
+        <div class="main">
+          <div class="chat-container">
+            <!-- Bot Messages -->
+            <div class="bot-message_container message-1-column">
+              <div class="message bot-message">
+                <div class="message-content">
+                  <div class="message-header">
+                    <div class="select_wrap">
+                      <select>
+                        <option value="option2">Claude 3</option>
+                        <option value="option1">ChatGPT</option>
+                        <option value="option3">Gemini</option>
+                      </select>
+                    </div>
+                    <!-- On/Off Button -->
+                  </div>
+                  <div class="message-text">
+                    <div class="centered-content">
+                      <h1>
+                        <svg
+                          id="_레이어_2"
+                          data-name="레이어 2"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 137.57 173.87"
+                          style="width: 40px"
+                        >
+                          <defs>
+                            <style>
+                              .cls-1 {
+                                fill: #333;
+                              }
+
+                              .cls-1,
+                              .cls-2 {
+                                stroke-width: 0px;
+                              }
+
+                              .cls-2 {
+                                fill: #333;
+                              }
+                            </style>
+                          </defs>
+                          <g id="Layer_2" data-name="Layer 2">
+                            <polygon
+                              class="cls-2"
+                              points="57.88 139.94 44.09 137.08 42 118.2 39.91 137.08 26.11 139.94 39.91 142.82 42 161.69 44.09 142.82 57.88 139.94"
+                            ></polygon>
+                            <polygon
+                              class="cls-2"
+                              points="21.39 159.23 12.1 157.3 10.69 144.59 9.28 157.3 0 159.23 9.28 161.16 10.69 173.87 12.1 161.16 21.39 159.23"
+                            ></polygon>
+                            <path
+                              class="cls-1"
+                              d="M136.68,85.82l-54.8-11.39c-.47-.1-.83-.49-.88-.97L72.96.99c-.15-1.32-2.07-1.32-2.22,0l-8.04,72.47c-.05.48-.41.87-.88.97l-54.8,11.39c-1.19.25-1.19,1.94,0,2.19l54.8,11.43c.47.1.83.49.88.97l8.04,72.47c.15,1.32,2.07,1.32,2.22,0l8.04-72.47c.05-.48.41-.87.88-.97l54.8-11.43c1.18-.25,1.18-1.94,0-2.19Z"
+                            ></path>
+                          </g>
+                        </svg>
+                        Magic Chat
+                      </h1>
+                      <p>오늘 어떻게 도와드릴까요?</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="input-container">
+              <!-- 1분할 아이콘 -->
+              <div class="icon">
+                <a href="index.html">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-table"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <!-- 2분할 아이콘 -->
+              <div class="icon">
+                <a href="2-column.html">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-table"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z"
+                    />
+                    <path d="M12 3v18" />
+                  </svg>
+                </a>
+              </div>
+              <!-- 3분할 아이콘 -->
+              <div class="icon">
+                <a href="3-column.html">
+                  <!-- <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-layout-sidebar"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M9 4l0 16" /><path d="M15 4l0 16" /></svg> -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-table"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z"
+                    />
+                    <path d="M9 3v18" />
+                    <path d="M15 3v18" />
+                  </svg>
+                </a>
+              </div>
+              <!-- 4분할 아이콘 -->
+              <div class="icon">
+                <a href="4-column.html">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-table"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z"
+                    />
+                    <path d="M3 12h18" />
+                    <path d="M12 3v18" />
+                  </svg>
+                </a>
+              </div>
+              <!-- 6분할 아이콘 -->
+              <!-- <div class="icon">
+                        <i class="fas fa-th"></i>
+                    </div> -->
+              <!-- 다크모드 -->
+              <div class="dark-mode" onclick="toggleDarkMode()">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-moon"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"
+                  />
+                </svg>
+                <!-- <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="icon icon-tabler icons-tabler-filled icon-tabler-square"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M19 2h-14a3 3 0 0 0 -3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3 -3v-14a3 3 0 0 0 -3 -3z"
+                />
+              </svg> -->
+              </div>
+              <input
+                type="text"
+                id="user-input"
+                placeholder="Type your message..."
+              />
+              <button id="send-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-send"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M10 14l11 -11" />
+                  <path
+                    d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
