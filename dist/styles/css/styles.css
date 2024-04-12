@@ -897,7 +897,9 @@ nav .nav_fold_btn {
   height: 100%;
   z-index: 999;
 }
-
+.chat_modal .message-1-column {
+  width: 100%;
+}
 .chat_modal .modal-content {
   background: #fff;
   color: #333;
@@ -1320,4 +1322,7 @@ textarea::placeholder {
   100% {
     background-position: -100% 0;
   }
+}
+.wrap {
+  background: red;
 }

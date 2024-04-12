@@ -1323,3 +1323,6 @@ textarea::placeholder {
     background-position: -100% 0;
   }
 }
+.wrap {
+  background: red;
+}
