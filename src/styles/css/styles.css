@@ -77,8 +77,7 @@ ul {
 .centered-content img {
   max-width: 100%;
 }
-body.nav_fold .container,
-.bodyBox.nav_fold .container {
+body.nav_fold .container {
   width: calc(100% - 70px);
   margin-left: 70px;
   transition: margin-left 0.3s ease 0s, width 0.3s ease 0s;
@@ -577,34 +576,28 @@ input:focus {
   border: none;
   background: none;
 }
-body.nav_fold nav,
-.bodyBox.nav_fold nav {
+.nav_fold nav {
   width: 70px;
 }
 
-body.nav_fold nav .nav_wrap,
-.bodyBox.nav_fold nav .nav_wrap {
+.nav_fold nav .nav_wrap {
   display: none;
 }
-body.nav_fold nav .nav_list,
-.bodyBox.nav_fold nav .nav_list {
+.nav_fold nav .nav_list {
   border-top: 1px solid #8a8b9f;
   gap: 10px;
   padding: 24px 0;
 }
 
-body.nav_fold nav .nav_container,
-.bodyBox.nav_fold nav .nav_container {
+.nav_fold nav .nav_container {
   padding: 0;
   align-items: center;
 }
 
-body.nav_fold nav .nav_title_area,
-.bodyBox.nav_fold nav .nav_title_area {
+.nav_fold nav .nav_title_area {
   display: none;
 }
-body.nav_fold nav .nav_fold_title_area,
-.bodyBox.nav_fold nav .nav_fold_title_area {
+.nav_fold nav .nav_fold_title_area {
   display: block;
   margin-top: 55px;
   text-align: center;
@@ -618,8 +611,11 @@ body.nav_fold nav .nav_fold_title_area,
   display:flex;
 } */
 
-body.nav_fold nav .nav_profile_area .profile_info_wrap,
-.bodyBox.nav_fold nav .nav_profile_area .profile_info_wrap {
+
+.nav_fold nav {
+  width: 70px;
+}
+.nav_fold nav .nav_profile_area .profile_info_wrap {
   display: none;
 }
 
@@ -1322,7 +1318,4 @@ textarea::placeholder {
   100% {
     background-position: -100% 0;
   }
-}
-.wrap {
-  background: red;
 }

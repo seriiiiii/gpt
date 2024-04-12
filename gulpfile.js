@@ -1,82 +1,33 @@
 // Initialize modules
-// Importing specific gulp API functions lets us write them below as series() instead of gulp.series()
 const { src, dest, watch, series, parallel } = require("gulp");
-// Importing all the Gulp-related packages we want to use
-const sourcemaps = require("gulp-sourcemaps");
-const sass = require("gulp-sass")(require("sass"));
 const fileinclude = require("gulp-file-include");
-
 const browserSync = require("browser-sync").create();
-
-const gulp = require("gulp");
 const purgecss = require("gulp-purgecss");
 
 // File paths
 const files = {
   distPath: "./dist",
-  stylePath: "./src/styles/**/*",
+  cssPath: "./src/styles/css/*.css",
+  disthtmlPath: "./dist/**/*.html", // CSS 파일 경로 수정
   htmlPath: "./src/html/**/*.html",
-  includePath: "./src/include/**/*.html",
-  jsDirPath: "./src/js/**/*",
-  jsFilePath: "./src/js/**/*.js",
+  htmlPartialsPath: "./src/Include/**/*.html", // 폴더명 오타 수정
+  jsDirPath: "./src/js/*.js",
+  imgSrcPath: "./src/styles/images/*.{jpg,png,gif,svg}",
+  imgDestPath: "./dist/styles/images",
 };
 
-// Sass task: compiles the style.scss file into style.css
-function scssTask() {
-  var scssOptions = {
-    /*
-     * outputStyle (Type : String , Default : nested)
-     * CSS의 컴파일 결과 코드스타일 지정
-     * Values : nested, expanded, compact, compressed
-     */
-    outputStyle: "expanded",
-
-    /*
-     * indentType (>= v3.0.0 , Type : String , Default : space)
-     * 컴파일 된 CSS의 "들여쓰기" 의 타입
-     * Values : space , tab
-     */
-    indentType: "tab",
-
-    /*
-     * indentWidth (>= v3.0.0, Type : Integer , Default : 2)
-     * 컴파일 된 CSS의 "들여쓰기" 의 갯수
-     */
-    indentWidth: 1,
-
-    /*
-     * precision (Type : Integer , Default : 5)
-     * 컴파일 된 CSS 의 소수점 자리수.
-     */
-    precision: 8,
-
-    /*
-     * sourceComments (Type : Boolean , Default : false)
-     * 컴파일 된 CSS 에 원본소스의 위치와 줄수 주석표시.
-     */
-    sourceComments: false,
-  };
-
-  return (
-    src(files.cssPath)
-      // .pipe(sourcemaps.init()) // initialize sourcemaps first
-      //.pipe(sass(scssOptions)) // compile SCSS to CSS
-      //.pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
-      // .pipe(sourcemaps.write())
-      .pipe(dest(files.distPath + "/css"))
-  ); // put final CSS in dist folder
+// Task to include HTML partials
+function fileincludeTask() {
+  return src([files.htmlPath, "!./src/htmlInclude/*.html"])
+    .pipe(
+      fileinclude({
+        prefix: "@@",
+        basepath: "@file",
+      })
+    )
+    .pipe(dest(files.distPath));
 }
 
-function stylesTask() {
-  return (
-    src(files.stylePath)
-      // .pipe(sourcemaps.init()) // initialize sourcemaps first
-      //.pipe(sass(scssOptions)) // compile SCSS to CSS
-      //.pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
-      // .pipe(sourcemaps.write())
-      .pipe(dest(files.distPath + "/styles"))
-  ); // put final CSS in dist folder
-}
 function javascriptTask() {
   return (
     src(files.jsDirPath)
@@ -88,18 +39,9 @@ function javascriptTask() {
   ); // put final CSS in dist folder
 }
 
-function fileincludeTask() {
-  return src([files.htmlPath, "!./src/include/*.html"])
-    .pipe(
-      fileinclude({
-        prefix: "@@",
-        basepath: "@file",
-      })
-    )
-    .pipe(dest(files.distPath));
-}
-
-function brwosersyncTask() {
+// Task to start BrowserSync server
+function browsersyncTask() {
+  // 함수명 오타 수정
   var options = {
     browserSync: {
       server: {
@@ -109,58 +51,35 @@ function brwosersyncTask() {
       open: "external",
     },
   };
-  browserSync.init(options.browserSync);
-  watch(files.htmlPath).on("change", browserSync.reload);
-  watch(files.includePath).on("change", browserSync.reload);
-  watch(files.jsFilePath).on("change", browserSync.reload);
+  if (true) {
+    browserSync.init(options.browserSync);
+
+    watch([files.htmlPath, files.htmlPartialsPath], series(fileincludeTask));
+    watch(files.htmlPath).on("change", browserSync.reload);
+    watch(files.htmlPartialsPath).on("change", browserSync.reload);
+    watch(files.jsDirPath).on("change", browserSync.reload);
+  }
 }
-
-// Export the default Gulp task so it can be run
-// Runs the scss and js tasks simultaneously
-// then runs cacheBust, then watch task
-
+// Task to purge unused CSS using purgecss
 function purgeCssTask() {
-  return gulp
-    .src(files.stylePath) // CSS 파일 경로
+  return src(files.cssPath)
     .pipe(
       purgecss({
-        content: ["./src/html/**/*.html", "./src/include/**/*.html"], // HTML 파일 경로
+        content: [files.htmlPath, files.htmlPartialsPath, files.jsDirPath], 
+        whitelist: ["nav_fold", "nav_container", "nav_fold nav .nav_container"], 
       })
     )
-    .pipe(gulp.dest(files.distPath + "/styles"));
+    .pipe(dest(files.distPath + "/styles/css"));
 }
+
+// Task to move images to dist folder
 function imageTask() {
-  return src("./src/styles/images/*.{jpg,png,gif}").pipe(
-    dest(files.distPath + "/styles/images")
-  );
+  return src(files.imgSrcPath).pipe(dest(files.imgDestPath));
 }
 
+// Default task
 exports.default = series(
-  parallel(
-    /*scssTask, */ stylesTask,
-    javascriptTask,
-    fileincludeTask,
-    imageTask
-  ),
-  brwosersyncTask,
-  purgeCssTask
+  parallel(fileincludeTask, imageTask, javascriptTask),
+  purgeCssTask,
+  browsersyncTask // 함수명 오타 수정
 );
-
-// const gulp = require("gulp");
-// const fileinclude = require('gulp-file-include');
-
-// gulp.task('fileinclude', function() {
-//     return gulp.src([
-//         "./src/html/*", // ★★★★ 불러올 파일의 위치
-//         "!" + "./src/include*" // ★★★★ 읽지 않고 패스할 파일의 위치
-//     ])
-//     .pipe(fileinclude({
-//         prefix: '@@',
-//         basepath: '@file'
-//         }))
-//     .pipe(gulp.dest('./dist/html')); // ★★★★ 변환한 파일의 저장 위치 지정
-// });
-
-// gulp.task( "default",
-//     gulp.parallel("fileinclude")
-// );

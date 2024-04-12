@@ -12,23 +12,23 @@ $(document).ready(function () {
   // });
 
   // 서브 메뉴 토글 이벤트 설정
-  $("#toggleSubMenu").click(function () {
-    $(".hide_menu").toggle();
-    $(".container").toggleClass("sub-menu-open");
+  // $("#toggleSubMenu").click(function () {
+  //   $(".hide_menu").toggle();
+  //   $(".container").toggleClass("sub-menu-open");
 
-    if ($(".hide_menu").css("display") === "none") {
-      $(".container").css("margin-left", "180px");
-    } else {
-      $(".container").css("margin-left", "320px");
-    }
-  });
+  //   if ($(".hide_menu").css("display") === "none") {
+  //     $(".container").css("margin-left", "180px");
+  //   } else {
+  //     $(".container").css("margin-left", "320px");
+  //   }
+  // });
 
   // 수집 버튼 클릭 이벤트 설정
-  $("#collectButton").click(function () {
-    $(".bot-message").hide();
-    $("#collectButton").hide();
-    $(".collect_message").show();
-  });
+  // $("#collectButton").click(function () {
+  //   $(".bot-message").hide();
+  //   $("#collectButton").hide();
+  //   $(".collect_message").show();
+  // });
 
   $(".main_title").click(function () {
     $(this).children(".sub-title").slideToggle();
