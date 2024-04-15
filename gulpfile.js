@@ -8,9 +8,9 @@ const purgecss = require("gulp-purgecss");
 const files = {
   distPath: "./dist",
   cssPath: "./src/styles/css/*.css",
-  disthtmlPath: "./dist/**/*.html", // CSS 파일 경로 수정
+  disthtmlPath: "./dist/**/*.html",
   htmlPath: "./src/html/**/*.html",
-  htmlPartialsPath: "./src/Include/**/*.html", // 폴더명 오타 수정
+  htmlPartialsPath: "./src/Include/**/*.html",
   jsDirPath: "./src/js/*.js",
   imgSrcPath: "./src/styles/images/*.{jpg,png,gif,svg}",
   imgDestPath: "./dist/styles/images",
@@ -41,7 +41,6 @@ function javascriptTask() {
 
 // Task to start BrowserSync server
 function browsersyncTask() {
-  // 함수명 오타 수정
   var options = {
     browserSync: {
       server: {
@@ -81,5 +80,5 @@ function imageTask() {
 exports.default = series(
   parallel(fileincludeTask, imageTask, javascriptTask),
   purgeCssTask,
-  browsersyncTask // 함수명 오타 수정
+  browsersyncTask
 );
