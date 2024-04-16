@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    @@include('../include/head.html')
+    @@include('../htmlPartials/head.html', { "headTitle": "Magic-chat" })
   </head>
   <body>
-    <div id="modal" class="chat_modal">
-      @@include('../include/chat_modal-4column.html')
-    </div>
-    <div id="modal" class="settings_modal">
-      @@include('../include/settings_modal.html')
-    </div>
-    <div id="modal" class="delete_modal">
-      @@include('../include/delete_modal.html')
-    </div>
+    @@include('../htmlPartials/chat_modal-4column.html')
+    @@include('../htmlPartials/settings_modal.html')>
+    @@include('../htmlPartials/delete_modal.html')
 
     <div id="wrapper">
-      <nav>@@include('../include/nav.html')</nav>
+      @@include('../htmlPartials/nav.html')
       <div class="container">
         <!-- <header>
             <h1>Hi</h1>
@@ -833,6 +827,6 @@
         </div>
       </div>
     </div>
-    <script src="js/script.js"></script>
+    @@include('../htmlPartials/footer.html')
   </body>
 </html>

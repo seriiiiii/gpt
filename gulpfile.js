@@ -10,15 +10,15 @@ const files = {
   cssPath: "./src/styles/css/*.css",
   disthtmlPath: "./dist/**/*.html",
   htmlPath: "./src/html/**/*.html",
-  htmlPartialsPath: "./src/Include/**/*.html",
+  htmlPartialsPath: "./src/htmlPartials/**/*.html",
   jsDirPath: "./src/js/*.js",
-  imgSrcPath: "./src/styles/images/*.{jpg,png,gif,svg}",
-  imgDestPath: "./dist/styles/images",
+  // imgSrcPath: "./src/styles/images/*.{jpg,png,gif,svg}",
+  // imgDestPath: "./dist/styles/images",
 };
 
 // Task to include HTML partials
 function fileincludeTask() {
-  return src([files.htmlPath, "!./src/htmlInclude/*.html"])
+  return src([files.htmlPath, "!./src/htmlPartials/*.html"])
     .pipe(
       fileinclude({
         prefix: "@@",
@@ -65,20 +65,20 @@ function purgeCssTask() {
     .pipe(
       purgecss({
         content: [files.htmlPath, files.htmlPartialsPath, files.jsDirPath],
-        whitelist: ["nav_fold", "nav_container", "nav_fold nav .nav_container"],
+        // whitelist: ["nav_fold", "nav_container", "nav_fold nav .nav_container"],
       })
     )
     .pipe(dest(files.distPath + "/styles/css"));
 }
 
 // Task to move images to dist folder
-function imageTask() {
-  return src(files.imgSrcPath).pipe(dest(files.imgDestPath));
-}
+// function imageTask() {
+//   return src(files.imgSrcPath).pipe(dest(files.imgDestPath));
+// }
 
 // Default task
 exports.default = series(
-  parallel(fileincludeTask, imageTask, javascriptTask),
+  parallel(fileincludeTask, javascriptTask),
   purgeCssTask,
   browsersyncTask
 );

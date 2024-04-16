@@ -480,7 +480,7 @@ select option {
 }
 
 .switch-toggle:checked + .switch-label {
-  background-color: #46b4c3;
+  background-color: #737d8d;
 }
 
 .switch-label::before {
@@ -610,7 +610,6 @@ input:focus {
   width: 100%;
   display:flex;
 } */
-
 
 .nav_fold nav {
   width: 70px;
