@@ -1134,9 +1134,9 @@ textarea::placeholder {
   display: block;
   color: #8b8d8f;
 }
-.dark-mode .chatbot {
+/* .dark-mode .chatbot {
   background: #36383b;
-}
+} */
 
 .dark-mode nav {
   color: #e5e5e5;
