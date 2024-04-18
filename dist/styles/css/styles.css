@@ -349,6 +349,17 @@ h1 {
   overflow-y: auto;
   height: calc(100vh - 180px);
 }
+.pause_btn {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  cursor: pointer;
+}
+.pause_btn svg {
+  border: 1px solid #8b8d8f;
+  border-radius: 30px;
+  padding: 1px;
+}
 .select_wrap {
   width: auto;
 }
@@ -390,7 +401,7 @@ select option {
 }
 
 .switch-toggle:checked + .switch-label {
-  background-color: #46b4c3;
+  background-color: #737d8d;
 }
 
 .switch-label::before {
@@ -410,6 +421,7 @@ select option {
 }
 
 .message-content {
+  position: relative;
   background: none;
   transition: background-color 0.3s;
   padding: 10px 0px;
@@ -502,7 +514,6 @@ input:focus {
   width: 100%;
   display:flex;
 } */
-
 
 .nav_fold nav {
   width: 70px;
@@ -958,9 +969,9 @@ textarea::placeholder {
   display: block;
   color: #8b8d8f;
 }
-.dark-mode .chatbot {
+/* .dark-mode .chatbot {
   background: #36383b;
-}
+} */
 
 .dark-mode nav {
   color: #e5e5e5;

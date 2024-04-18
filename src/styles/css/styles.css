@@ -436,6 +436,17 @@ h1 {
   overflow-y: auto;
   height: calc(100vh - 180px);
 }
+.pause_btn {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  cursor: pointer;
+}
+.pause_btn svg {
+  border: 1px solid #8b8d8f;
+  border-radius: 30px;
+  padding: 1px;
+}
 .select_wrap {
   width: auto;
 }
@@ -500,6 +511,7 @@ select option {
 }
 
 .message-content {
+  position: relative;
   background: none;
   transition: background-color 0.3s;
   padding: 10px 0px;
