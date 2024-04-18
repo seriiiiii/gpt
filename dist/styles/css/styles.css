@@ -356,7 +356,7 @@ h1 {
   cursor: pointer;
 }
 .pause_btn svg {
-  border: 1px solid #8b8d8f;
+  border: 1px solid #333;
   border-radius: 30px;
   padding: 1px;
 }
