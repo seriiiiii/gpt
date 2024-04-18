@@ -992,7 +992,7 @@ nav .nav_fold_btn {
 .settings_modal div {
   margin-bottom: 10px;
 }
-.button-container {
+.settings_modal .button-container {
   text-align: right;
 }
 .settings_modal label {
