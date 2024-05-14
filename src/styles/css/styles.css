@@ -149,6 +149,10 @@ nav.active + .container {
   color: #333;
 }
 .chat-list ul li:nth-child(2) {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   font-weight: 600;
 }
 .chat-list ul li:nth-child(3) {
@@ -278,7 +282,7 @@ h1 {
 }
 .user-text,
 .chat-text {
-  padding: 5px 0px 0px 25px;
+  padding: 5px 25px 0px 25px;
 }
 .message-2-column {
   display: grid;
@@ -365,7 +369,7 @@ h1 {
   display: none;
   position: absolute;
   bottom: -20px;
-  right: 0px;
+  right: 10px;
   font-size: 13px;
   color: #797979;
 }
@@ -949,10 +953,14 @@ nav .nav_fold_btn {
   cursor: pointer;
 }
 .chat-modal_title {
+  width: calc(100% - 30px);
   height: 35px;
   font-size: 16px;
   font-weight: 600;
   color: #91bbff;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .chat-modal_title span {
   font-size: 12px;
